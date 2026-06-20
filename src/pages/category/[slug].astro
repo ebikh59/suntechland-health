@@ -33,6 +33,7 @@ const labelMap: Record<string, string> = {
   'hospital-attacks':        'Hospital Attacks',
   'medical-device-security': 'Medical Device Security',
   'patient-data-breaches':   'Patient Data Breaches',
+<<<<<<< HEAD
   'healthcare-threat-intel': 'Healthcare Threat Intelligence',
   'health-it-security':      'Health IT & EHR Security',
 };
@@ -67,6 +68,7 @@ const label = labelMap[slug] ?? slug;
             slug={post.id}
             image={post.data.image}
             author={post.data.author}
+            severity={post.data.severity}
           />
         ))}
       </div>

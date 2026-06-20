@@ -20,6 +20,7 @@ const posts = defineCollection({
     image: z.string().optional(),
     featured: z.boolean().default(false),
     source: z.string().optional(),
+    severity: z.enum(['Critical', 'High', 'Medium', 'Low']).optional(),
   }),
 });
 

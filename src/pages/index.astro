@@ -16,6 +16,7 @@ const latest = allPosts.filter(p => p.id !== featured?.id).slice(0, 6);
 const categories = [
   { slug: 'hipaa-compliance',        label: 'HIPAA & Compliance', color: '#00d4ff' },
   { slug: 'hospital-attacks',        label: 'Hospital Attacks',   color: '#ef4444' },
+<<<<<<< HEAD
   { slug: 'medical-device-security', label: 'Medical Devices',    color: '#f97316' },
   { slug: 'patient-data-breaches',   label: 'Patient Data',       color: '#eab308' },
   { slug: 'healthcare-threat-intel', label: 'Threat Intel',       color: '#a855f7' },
@@ -23,12 +24,13 @@ const categories = [
 ];
 ---
 
-<BaseLayout title="Cybersecurity News & Threat Intelligence">
+<BaseLayout title="Healthcare Cybersecurity News & Threat Intelligence">
   <!-- Hero ticker -->
   <div class="ticker-bar">
     <div class="container ticker-inner">
       <span class="ticker-label">LIVE</span>
       <div class="ticker-track">
+<<<<<<< HEAD
         <span>Latest: Healthcare ransomware attacks surge in 2026 — stay informed with SunTechLand &nbsp;&nbsp;•&nbsp;&nbsp; New HIPAA breach notifications published &nbsp;&nbsp;•&nbsp;&nbsp; Medical device vulnerability alerts &nbsp;&nbsp;•&nbsp;&nbsp; Updated hourly via automated feeds</span>
       </div>
     </div>
@@ -88,6 +90,7 @@ const categories = [
           slug={post.id}
           image={post.data.image}
           author={post.data.author}
+          severity={post.data.severity}
         />
       ))}
     </div>

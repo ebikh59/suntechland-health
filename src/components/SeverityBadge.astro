@@ -1,0 +1,35 @@
+---
+const { severity } = Astro.props as { severity?: string };
+if (!severity) return;
+
+const map: Record<string, { color: string }> = {
+  Critical: { color: '#ef4444' },
+  High:     { color: '#f97316' },
+  Medium:   { color: '#eab308' },
+  Low:      { color: '#22c55e' },
+};
+const { color } = map[severity] ?? { color: '#94a3b8' };
+---
+
+<span class="severity-badge" style={`--c: ${color}`}>{severity}</span>
+
+<style>
+.severity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.18rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--c);
+  background: color-mix(in srgb, var(--c) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
+}
+.severity-badge::before {
+  content: '▲';
+  font-size: 0.55rem;
+}
+</style>

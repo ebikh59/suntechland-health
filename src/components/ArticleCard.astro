@@ -1,5 +1,6 @@
 ---
 import CategoryBadge from './CategoryBadge.astro';
+import SeverityBadge from './SeverityBadge.astro';
 
 interface Props {
   title: string;
@@ -9,9 +10,10 @@ interface Props {
   slug: string;
   image?: string;
   author?: string;
+  severity?: string;
 }
 
-const { title, excerpt, date, category, slug, image, author } = Astro.props;
+const { title, excerpt, date, category, slug, image, author, severity } = Astro.props;
 const formattedDate = date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
 ---
 
@@ -24,6 +26,7 @@ const formattedDate = date.toLocaleDateString('en-AU', { day: 'numeric', month: 
   <div class="card-body">
     <div class="card-meta">
       <CategoryBadge category={category} />
+      {severity && <SeverityBadge severity={severity} />}
       <time datetime={date.toISOString()}>{formattedDate}</time>
     </div>
     <h3><a href={`/post/${slug}`}>{title}</a></h3>
