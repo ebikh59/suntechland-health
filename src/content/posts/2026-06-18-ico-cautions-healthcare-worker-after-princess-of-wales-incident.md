@@ -13,7 +13,3 @@ Hospital insider escapes criminal prosecution after attempting to sell royal’s
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/ico-cautions-healthcare-worker/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/ico-cautions-healthcare-worker/).*
