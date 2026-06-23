@@ -17,7 +17,3 @@ The HHS-OIG's exclusions can have significant clinical and operational implicati
 ## Read More
 
 [Read the full article at the original source →](https://www.hipaajournal.com/june-2026-hhs-oig-exclusions/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.hipaajournal.com](https://www.hipaajournal.com/june-2026-hhs-oig-exclusions/).*
