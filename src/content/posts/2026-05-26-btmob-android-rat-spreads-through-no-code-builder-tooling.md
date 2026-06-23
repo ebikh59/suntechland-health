@@ -13,7 +13,3 @@ BTMOB Android RAT sold as a service with a no-code builder for fast, regional ph
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/btmob-android-rat-maas-builder/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/btmob-android-rat-maas-builder/).*
