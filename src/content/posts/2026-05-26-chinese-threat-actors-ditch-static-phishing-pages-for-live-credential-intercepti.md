@@ -13,7 +13,3 @@ Almost all organizations impersonated by Chinese phishing platforms are non-Chin
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/chinese-phishing-live-credential/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/chinese-phishing-live-credential/).*
