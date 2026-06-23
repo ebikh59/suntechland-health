@@ -17,7 +17,3 @@ The $59.5 million settlement underscores the need for healthcare app developers 
 ## Read More
 
 [Read the full article at the original source →](https://www.hipaajournal.com/flo-health-google-flurry-59-5m-settlement-privacy-lawsuit/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.hipaajournal.com](https://www.hipaajournal.com/flo-health-google-flurry-59-5m-settlement-privacy-lawsuit/).*
