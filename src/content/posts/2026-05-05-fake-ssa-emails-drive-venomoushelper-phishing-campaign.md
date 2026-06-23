@@ -13,7 +13,3 @@ Venomous#Helper attackers impersonate the US Social Security Administration to d
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/ssa-emails-venomous-helper-phishing/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/ssa-emails-venomous-helper-phishing/).*
