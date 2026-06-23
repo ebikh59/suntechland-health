@@ -13,7 +13,3 @@ GitBait phishing kit abuses GitHub Pages and the SheetBest API to steal Mexican 
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/gitbait-github-pages-sheetbest/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/gitbait-github-pages-sheetbest/).*
