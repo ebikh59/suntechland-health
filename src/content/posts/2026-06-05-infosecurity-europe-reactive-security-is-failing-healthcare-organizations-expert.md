@@ -13,7 +13,3 @@ A perfect storm of legacy devices, hyper connectivity and human fatigue is bad n
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/reactive-security-failing/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/reactive-security-failing/).*
