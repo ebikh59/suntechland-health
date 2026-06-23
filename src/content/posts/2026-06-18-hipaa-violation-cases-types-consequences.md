@@ -17,7 +17,3 @@ Healthcare organizations found to be in violation of HIPAA regulations can face 
 ## Read More
 
 [Read the full article at the original source →](https://www.hipaajournal.com/hipaa-violation-cases/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.hipaajournal.com](https://www.hipaajournal.com/hipaa-violation-cases/).*
