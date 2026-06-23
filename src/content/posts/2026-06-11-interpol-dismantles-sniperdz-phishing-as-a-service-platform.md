@@ -13,7 +13,3 @@ New revelations by Group-IB expose the full scale of the decade-old SniperDz phi
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/interpol-dismantles-sniperdz/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/interpol-dismantles-sniperdz/).*
