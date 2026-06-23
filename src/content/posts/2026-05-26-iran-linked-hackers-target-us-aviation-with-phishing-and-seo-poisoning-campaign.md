@@ -13,7 +13,3 @@ Iran's Nimbus Manticore pushes AI-built MiniFast backdoor via phishing and SEO p
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/iranian-hackers-us-aviation/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/iranian-hackers-us-aviation/).*
