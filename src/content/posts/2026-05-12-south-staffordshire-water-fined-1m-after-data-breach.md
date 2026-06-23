@@ -13,7 +13,3 @@ The ICO has fined South Staffordshire Water nearly £1m for a series of data pro
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/south-staffordshire-water-fined-1m/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/south-staffordshire-water-fined-1m/).*
