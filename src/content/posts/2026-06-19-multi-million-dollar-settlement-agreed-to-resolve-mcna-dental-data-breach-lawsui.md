@@ -17,7 +17,3 @@ The terms of the settlement highlight the need for healthcare organizations to p
 ## Read More
 
 [Read the full article at the original source →](https://www.hipaajournal.com/mcna-dental-data-breach-settlement/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.hipaajournal.com](https://www.hipaajournal.com/mcna-dental-data-breach-settlement/).*
