@@ -17,7 +17,3 @@ By prioritizing HIPAA compliance, medical spas can maintain the trust of their p
 ## Read More
 
 [Read the full article at the original source →](https://www.hipaajournal.com/hipaa-compliance-for-medical-spas/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.hipaajournal.com](https://www.hipaajournal.com/hipaa-compliance-for-medical-spas/).*
