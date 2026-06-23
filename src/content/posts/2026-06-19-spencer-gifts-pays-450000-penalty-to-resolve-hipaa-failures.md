@@ -17,7 +17,3 @@ The $450,000 penalty serves as a reminder to all entities that handle protected 
 ## Read More
 
 [Read the full article at the original source →](https://www.hipaajournal.com/spencer-gifts-hipaa-settlement/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.hipaajournal.com](https://www.hipaajournal.com/spencer-gifts-hipaa-settlement/).*
