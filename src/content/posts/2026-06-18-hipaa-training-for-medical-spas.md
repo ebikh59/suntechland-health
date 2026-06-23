@@ -15,7 +15,3 @@ The post HIPAA Training for Medical Spas appeared first on The HIPAA Journal.
 ## Read More
 
 [Read the full article at the original source →](https://www.hipaajournal.com/hipaa-training-for-medical-spas/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.hipaajournal.com](https://www.hipaajournal.com/hipaa-training-for-medical-spas/).*
