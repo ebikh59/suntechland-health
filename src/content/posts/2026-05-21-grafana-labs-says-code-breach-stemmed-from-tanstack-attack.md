@@ -13,7 +13,3 @@ Grafana Labs has confirmed a recent data breach was caused by the TanStack suppl
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/grafana-labs-code-breach-tanstack/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/grafana-labs-code-breach-tanstack/).*
