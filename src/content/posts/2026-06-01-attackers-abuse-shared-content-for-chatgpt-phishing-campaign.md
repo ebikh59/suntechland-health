@@ -13,7 +13,3 @@ Push Security says threat actors are delivering malware hosted on chatgpt.com/s/
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/attackers-shared-content-chatgpt/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/attackers-shared-content-chatgpt/).*
