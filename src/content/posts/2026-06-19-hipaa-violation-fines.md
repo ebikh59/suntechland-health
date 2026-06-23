@@ -17,7 +17,3 @@ Healthcare entities must ensure they have robust safeguards in place to protect 
 ## Read More
 
 [Read the full article at the original source →](https://www.hipaajournal.com/hipaa-violation-fines/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.hipaajournal.com](https://www.hipaajournal.com/hipaa-violation-fines/).*
