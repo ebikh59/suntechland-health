@@ -13,7 +13,3 @@ Microsoft researchers warn of a large-scale phishing campaign using fake complia
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/microsoft-phishing-fake-compliance/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/microsoft-phishing-fake-compliance/).*
