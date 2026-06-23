@@ -17,7 +17,3 @@ Details of the breach are still emerging, but iRhythm's notification to the SEC 
 ## Read More
 
 [Read the full article at the original source →](https://www.hipaajournal.com/irhythm-data-breach/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.hipaajournal.com](https://www.hipaajournal.com/irhythm-data-breach/).*
