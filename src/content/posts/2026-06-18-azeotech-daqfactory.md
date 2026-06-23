@@ -38,7 +38,3 @@ Countries/Areas Deployed: Worldw
 ## Read More
 
 [Read the full article at the original source →](https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-02)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.cisa.gov](https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-02).*
