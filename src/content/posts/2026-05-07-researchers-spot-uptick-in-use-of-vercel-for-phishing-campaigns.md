@@ -13,7 +13,3 @@ Cofense has warned of a “significant” increase in phishing campaigns abusing
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/researchers-spot-uptick-vercel/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/researchers-spot-uptick-vercel/).*
