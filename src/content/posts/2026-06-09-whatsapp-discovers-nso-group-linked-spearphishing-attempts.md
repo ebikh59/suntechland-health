@@ -13,7 +13,3 @@ Meta’s WhatsApp demands contempt ruling after users report NSO Group-linked ph
 ## Read More
 
 [Read the full article at the original source →](https://www.infosecurity-magazine.com/news/whatsapp-nso-group-spearphishing/)
-
----
-
-*Article intelligence powered by AI. Original reporting by [www.infosecurity-magazine.com](https://www.infosecurity-magazine.com/news/whatsapp-nso-group-spearphishing/).*
