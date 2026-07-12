@@ -5,11 +5,11 @@ date: 2026-07-12
 category: patient-data-breaches
 severity: High
 tags: [automated, healthcare-security, australia, ndb, tracker]
-author: Ebi Abyazi
+author: SunTechLand Staff
 source: "https://www.oaic.gov.au/privacy/notifiable-data-breaches/notifiable-data-breaches-publications"
 ---
 
-Health service providers reported **128 notifiable data breaches** in the latest OAIC reporting period, keeping health the **most-breached sector** in Australia under the OAIC Notifiable Data Breaches (NDB) scheme.
+Health service providers reported **128 notifiable data breaches** in July-December 2025, keeping health the **most-breached sector** in Australia under the OAIC Notifiable Data Breaches (NDB) scheme.
 
 ## How Australian health breaches broke down
 
@@ -24,6 +24,6 @@ Under the Privacy Act 1988 and the NDB scheme, Australian healthcare providers m
 ## Source
 
 - [OAIC Notifiable Data Breaches publications](https://www.oaic.gov.au/privacy/notifiable-data-breaches/notifiable-data-breaches-publications)
-- [NDB scheme dataset (data.gov.au)](https://data.gov.au/data/dataset/notifiable-data-breaches-scheme)
+- [NDB scheme dataset (data.gov.au)](https://data.gov.au/data/dataset/5781dc17-2ad0-4dd1-bced-01c544943ce3)
 
-*Figures for the latest OAIC reporting period. This tracker updates automatically.*
+*Figures for July-December 2025. This tracker updates automatically.*
