@@ -1,28 +1,28 @@
 ---
 const { category } = Astro.props as { category: string };
 
-const map: Record<string, { label: string; color: string }> = {
-  'attacks-breaches':   { label: 'Attacks & Breaches', color: '#ef4444' },
-  'ai-healthcare':      { label: 'AI in Healthcare',   color: '#a855f7' },
-  'health-it-security': { label: 'Health IT',          color: '#22c55e' },
+const map: Record<string, string> = {
+  'attacks-breaches':   'Attacks & Breaches',
+  'ai-healthcare':      'AI in Healthcare',
+  'health-it-security': 'Health IT',
 };
 
-const { label, color } = map[category] ?? { label: category, color: '#94a3b8' };
+const label = map[category] ?? category;
 ---
 
-<span class="badge" style={`--c: ${color}`}>{label}</span>
+<span class="badge">{label}</span>
 
 <style>
 .badge {
   display: inline-block;
-  padding: 0.2rem 0.65rem;
-  border-radius: 4px;
-  font-size: 0.7rem;
-  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-family: var(--font-ui);
+  font-size: 0.69rem;
+  font-weight: 650;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--c);
-  background: color-mix(in srgb, var(--c) 12%, transparent);
-  border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 13%, transparent);
 }
 </style>

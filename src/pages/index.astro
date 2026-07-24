@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FeaturedCard from '../components/FeaturedCard.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import CategoryBadge from '../components/CategoryBadge.astro';
+import SeverityBadge from '../components/SeverityBadge.astro';
 import AdBanner from '../components/AdBanner.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { getCollection } from 'astro:content';
@@ -10,73 +10,94 @@ import { getCollection } from 'astro:content';
 const allPosts = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-const featured = allPosts.find(p => p.data.featured) ?? allPosts[0];
-const latest = allPosts.filter(p => p.id !== featured?.id).slice(0, 6);
+/* OAIC NDB tracker drives the "vitals" panel — read straight from the tracker post */
+const tracker = allPosts.find(p => p.id.includes('healthcare-data-breaches-tracker'));
+const tb = tracker?.body ?? '';
+const figure    = tb.match(/\*\*(\d[\d,]*)\s+notifiable data breaches\*\*/)?.[1] ?? null;
+const period    = tb.match(/notifiable data breaches\*\*\s+in\s+([^,]+),/)?.[1] ?? null;
+const malicious = tb.match(/Malicious or criminal attack:\*\*\s*(\d+)/)?.[1] ?? null;
+const humanErr  = tb.match(/Human error:\*\*\s*(\d+)/)?.[1] ?? null;
+const systemF   = tb.match(/System fault:\*\*\s*(\d+)/)?.[1] ?? null;
+const peak = Math.max(Number(malicious ?? 0), Number(humanErr ?? 0), Number(systemF ?? 0)) || 1;
+const bars = [
+  { label: 'Malicious or criminal attack', value: malicious, tone: 'var(--crit)' },
+  { label: 'Human error',                  value: humanErr,  tone: 'var(--high)' },
+  { label: 'System fault',                 value: systemF,   tone: 'var(--med)'  },
+].filter(b => b.value);
+
+const lead = allPosts.find(p => p.id !== tracker?.id) ?? allPosts[0];
+const latest = allPosts.filter(p => p.id !== lead?.id && p.id !== tracker?.id).slice(0, 6);
 
 const categories = [
-  { slug: 'attacks-breaches',   label: 'Attacks & Breaches', color: '#ef4444' },
-  { slug: 'ai-healthcare',      label: 'AI in Healthcare',   color: '#a855f7' },
-  { slug: 'health-it-security', label: 'Health IT',          color: '#22c55e' },
+  { slug: 'attacks-breaches',   label: 'Attacks & Breaches', blurb: 'Ransomware, intrusions, notifiable breaches and settlements affecting health providers.' },
+  { slug: 'ai-healthcare',      label: 'AI in Healthcare',   blurb: 'Clinical AI, model risk, and the hard questions about patient data in machine systems.' },
+  { slug: 'health-it-security', label: 'Health IT',          blurb: 'EHR platforms, integrations and the operational security of clinical infrastructure.' },
 ];
+const counts: Record<string, number> = Object.fromEntries(
+  categories.map(c => [c.slug, allPosts.filter(p => p.data.category === c.slug).length])
+);
+
+const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
 ---
 
-<BaseLayout title="Healthcare Cybersecurity News & Threat Intelligence">
-  <!-- Hero ticker -->
-  <div class="ticker-bar">
-    <div class="container ticker-inner">
-      <span class="ticker-label">LIVE</span>
-      <div class="ticker-track">
-        <span>Latest: Healthcare ransomware attacks surge in 2026 — stay informed with SunTechLand &nbsp;&nbsp;•&nbsp;&nbsp; New HIPAA breach notifications published &nbsp;&nbsp;•&nbsp;&nbsp; Medical device vulnerability alerts &nbsp;&nbsp;•&nbsp;&nbsp; Updated hourly via automated feeds</span>
-      </div>
-    </div>
-  </div>
+<BaseLayout title="Australian Healthcare Cyber Security News & Breach Intelligence">
 
-  <!-- Top ad -->
-  <div class="container" style="margin-top:1.5rem">
-    <AdBanner size="leaderboard" />
-  </div>
+  <!-- ── Hero: sector vitals + lead story ─────────────────────────── -->
+  <section class="container hero">
+    <div class="eyebrow">Sector vitals — OAIC Notifiable Data Breaches</div>
 
-  <!-- Featured post -->
-  {featured && (
-    <section class="section container">
-      <div class="section-header">
-        <h2 class="section-title">Featured Story</h2>
-      </div>
-      <FeaturedCard
-        title={featured.data.title}
-        excerpt={featured.data.excerpt}
-        date={featured.data.date}
-        category={featured.data.category}
-        slug={featured.id}
-        image={featured.data.image}
-        author={featured.data.author}
-        severity={featured.data.severity}
-      />
-    </section>
-  )}
+    <div class="hero-grid">
+      <aside class="vitals">
+        <h2>Health is Australia&rsquo;s most-breached sector</h2>
 
-  <!-- Category quick-nav -->
-  <section class="section container">
-    <div class="section-header">
-      <h2 class="section-title">Browse by Category</h2>
-    </div>
-    <div class="categories-grid">
-      {categories.map(cat => (
-        <a href={`/category/${cat.slug}`} class="cat-card" style={`--cc: ${cat.color}`}>
-          <span class="cat-label">{cat.label}</span>
-          <span class="cat-arrow">→</span>
-        </a>
-      ))}
+        {figure ? (
+          <div>
+            <div class="figure">{figure}<span>breaches</span></div>
+            {period && <div class="period">Health service providers · {period}</div>}
+          </div>
+        ) : (
+          <p class="period">Latest OAIC figures are being updated.</p>
+        )}
+
+        {bars.length > 0 && (
+          <div class="bars">
+            {bars.map(b => (
+              <div class="bar-row">
+                <span class="bar-label">{b.label}</span>
+                <span class="bar-val">{b.value}</span>
+                <span class="bar-track">
+                  <span class="bar-fill" style={`width:${(Number(b.value) / peak) * 100}%;background:${b.tone}`}></span>
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {tracker && <a class="vitals-link" href={`/post/${tracker.id}`}>Open the full tracker →</a>}
+      </aside>
+
+      {lead && (
+        <article class={`lead s-${(lead.data.severity ?? 'none').toLowerCase()}`}>
+          <div class="lead-meta">
+            {lead.data.severity && <SeverityBadge severity={lead.data.severity} />}
+            <CategoryBadge category={lead.data.category} />
+            <time datetime={lead.data.date.toISOString()}>{leadDate}</time>
+          </div>
+          <h1><a href={`/post/${lead.id}`}>{lead.data.title}</a></h1>
+          <p class="lead-excerpt">{lead.data.excerpt}</p>
+          <a href={`/post/${lead.id}`} class="lead-more">Read the full analysis →</a>
+        </article>
+      )}
     </div>
   </section>
 
-  <!-- Latest articles -->
-  <section class="section container">
-    <div class="section-header">
-      <h2 class="section-title">Latest Articles</h2>
+  <!-- ── Triage board ─────────────────────────────────────────────── -->
+  <section class="container board">
+    <div class="eyebrow eyebrow-row">
+      <span>Latest — triaged by impact on Australian providers</span>
       <a href="/blog" class="see-all">View all →</a>
     </div>
-    <div class="grid-3">
+    <div class="cases">
       {latest.map(post => (
         <ArticleCard
           title={post.data.title}
@@ -92,89 +113,166 @@ const categories = [
     </div>
   </section>
 
-  <div class="container">
-    <NewsletterSignup />
-  </div>
+  <!-- ── Sections ─────────────────────────────────────────────────── -->
+  <section class="container sections">
+    <div class="eyebrow">Sections</div>
+    <div class="cat-grid">
+      {categories.map(cat => (
+        <a href={`/category/${cat.slug}`} class="cat">
+          <h4>{cat.label}</h4>
+          <p>{cat.blurb}</p>
+          <span class="count">{counts[cat.slug]} articles</span>
+        </a>
+      ))}
+    </div>
+  </section>
 
-  <!-- Bottom ad -->
+  <div class="container"><NewsletterSignup /></div>
+
   <div class="container" style="margin-bottom:2rem">
     <AdBanner size="leaderboard" id="ad-bottom" />
   </div>
 </BaseLayout>
 
 <style>
-/* Ticker */
-.ticker-bar {
-  background: #0d1117;
-  border-bottom: 1px solid var(--border);
-  padding: 0.5rem 0;
-  overflow: hidden;
-}
-.ticker-inner {
+/* ── shared ── */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
   display: flex;
   align-items: center;
-  gap: 1rem;
-  overflow: hidden;
-}
-.ticker-label {
-  background: var(--red, #ef4444);
-  color: #fff;
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
-  flex-shrink: 0;
-  animation: blink 1.2s infinite;
-}
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-.ticker-track {
-  overflow: hidden;
-  white-space: nowrap;
-  flex: 1;
-}
-.ticker-track span {
-  display: inline-block;
-  font-size: 0.82rem;
-  color: var(--subtle);
-  animation: scroll 30s linear infinite;
-}
-@keyframes scroll { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
-
-/* Sections */
-.section { margin-top: 3rem; }
-.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
-.section-title { font-size: 1.2rem; font-weight: 800; position: relative; padding-left: 1rem; }
-.section-title::before {
-  content: '';
-  position: absolute; left: 0; top: 0; bottom: 0;
-  width: 3px; background: var(--accent); border-radius: 2px;
-}
-.see-all { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
-.see-all:hover { color: var(--text); }
-
-/* Category cards */
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
   gap: 0.75rem;
+  margin-bottom: 0.9rem;
 }
-@media (max-width: 1100px) { .categories-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 600px)  { .categories-grid { grid-template-columns: repeat(2, 1fr); } }
+.eyebrow::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.eyebrow-row { justify-content: space-between; }
+.eyebrow-row::after { order: 1; }
+.see-all {
+  order: 2;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+}
 
-.cat-card {
-  background: var(--card);
+.hero { margin-top: 2rem; }
+.hero-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+@media (min-width: 980px) { .hero-grid { grid-template-columns: 360px 1fr; } }
+
+/* ── vitals panel ── */
+.vitals {
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1rem;
-  display: flex; flex-direction: row; align-items: center; justify-content: space-between;
-  text-decoration: none;
-  transition: border-color 0.2s, transform 0.2s;
+  border-radius: 6px;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.cat-card:hover {
-  border-color: var(--cc);
-  transform: translateY(-2px);
+.vitals h2 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1.25;
+  font-weight: 700;
+  text-wrap: balance;
 }
-.cat-label { font-size: 0.85rem; font-weight: 700; color: var(--text); }
-.cat-arrow { font-size: 0.8rem; color: var(--cc); }
+.figure {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 3.3rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+.figure span { font-size: 0.95rem; color: var(--muted); margin-left: 0.5rem; letter-spacing: 0; }
+.period { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); }
+
+.bars { display: flex; flex-direction: column; gap: 0.6rem; }
+.bar-row { display: grid; grid-template-columns: 1fr auto; gap: 0.35rem 0.75rem; align-items: center; }
+.bar-label { font-size: 0.78rem; color: var(--subtle); }
+.bar-val {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+.bar-track { grid-column: 1 / -1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.bar-fill { display: block; height: 100%; border-radius: 2px; }
+.vitals-link { font-size: 0.82rem; color: var(--accent); font-weight: 600; }
+.vitals-link:hover { color: var(--text); }
+
+/* ── lead story ── */
+.lead {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: 6px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.lead.s-critical { border-left-color: var(--crit); }
+.lead.s-high     { border-left-color: var(--high); }
+.lead.s-medium   { border-left-color: var(--med); }
+.lead.s-low      { border-left-color: var(--low); }
+
+.lead-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.lead h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+.lead h1 a { color: var(--text); }
+.lead h1 a:hover { color: var(--accent); }
+.lead-excerpt { color: var(--subtle); max-width: 62ch; line-height: 1.6; }
+.lead-more { font-size: 0.86rem; color: var(--accent); font-weight: 600; }
+.lead-more:hover { color: var(--text); }
+
+/* ── board ── */
+.board { margin-top: 2.75rem; }
+.cases { display: flex; flex-direction: column; gap: 0.6rem; }
+
+/* ── sections ── */
+.sections { margin-top: 2.75rem; }
+.cat-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 760px) { .cat-grid { grid-template-columns: repeat(3, 1fr); } }
+.cat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  transition: border-color 0.15s;
+}
+.cat:hover { border-color: var(--accent); }
+.cat h4 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--text); }
+.cat p { font-size: 0.85rem; color: var(--subtle); flex: 1; }
+.cat .count {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
 </style>

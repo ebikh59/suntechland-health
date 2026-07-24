@@ -13,14 +13,15 @@ const currentPath = Astro.url.pathname;
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="logo">
-      <span class="logo-icon">
+      <span class="logo-icon" style="color:var(--accent)">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-          <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
-          <polygon points="14,6 22,10 22,18 14,22 6,18 6,10" fill="none" stroke="#00d4ff" stroke-width="0.75" opacity="0.4"/>
-          <circle cx="14" cy="14" r="3" fill="#00d4ff"/>
+          <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <polygon points="14,6 22,10 22,18 14,22 6,18 6,10" fill="none" stroke="currentColor" stroke-width="0.75" opacity="0.4"/>
+          <circle cx="14" cy="14" r="3" fill="currentColor"/>
         </svg>
       </span>
       <span class="logo-text">SunTech<span class="logo-accent">Land</span></span>
+      <span class="locale">AU</span>
     </a>
 
     <nav class="main-nav" aria-label="Main navigation">
@@ -87,6 +88,17 @@ const currentPath = Astro.url.pathname;
   letter-spacing: -0.02em;
 }
 .logo-accent { color: var(--accent); }
+.locale {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 0.1rem 0.35rem;
+  border-radius: 2px;
+  margin-left: 0.15rem;
+}
 
 .main-nav {
   display: flex;
