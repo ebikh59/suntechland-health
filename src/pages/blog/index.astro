@@ -35,7 +35,7 @@ const categories = ['All', 'attacks-breaches', 'ai-healthcare', 'health-it-secur
         <p>No articles yet. Check back soon — content is updated hourly.</p>
       </div>
     ) : (
-      <div class="grid-3">
+      <div class="cases">
         {allPosts.map(post => (
           <ArticleCard
             title={post.data.title}

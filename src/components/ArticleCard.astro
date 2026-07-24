@@ -57,7 +57,7 @@ const sevClass = severity ? `s-${severity.toLowerCase()}` : 's-none';
 .case.s-medium   { border-left-color: var(--med); }
 .case.s-low      { border-left-color: var(--low); }
 
-@media (min-width: 760px) {
+@container (min-width: 660px) {
   .case { grid-template-columns: 104px 1fr 132px; align-items: start; }
   .case-chart { text-align: right; }
 }

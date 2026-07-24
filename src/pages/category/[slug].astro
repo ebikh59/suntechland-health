@@ -51,7 +51,7 @@ const label = labelMap[slug] ?? slug;
         <p>No articles in this category yet. Check back soon.</p>
       </div>
     ) : (
-      <div class="grid-3" style="margin-top:2rem">
+      <div class="cases" style="margin-top:2rem">
         {posts.map(post => (
           <ArticleCard
             title={post.data.title}

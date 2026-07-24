@@ -120,3 +120,12 @@ time, .meta, .post-meta, .card-meta, .source, .count {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
+
+
+/* Triage board list — a container so cards adapt to their own width, not the viewport */
+.cases {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  container-type: inline-size;
+}
