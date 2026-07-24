@@ -2,7 +2,7 @@
 title: "Employees Drop Class Action Lawsuit Against Stryker Over Hamdala Cyberattack"
 excerpt: "A consolidated class action lawsuit against the medtech company Stryker over a March 2026 cyberattack has been voluntarily dismissed by"
 date: 2026-07-03
-category: hipaa-compliance
+category: attacks-breaches
 severity: Medium
 tags: [automated, healthcare-security]
 author: SunTechLand

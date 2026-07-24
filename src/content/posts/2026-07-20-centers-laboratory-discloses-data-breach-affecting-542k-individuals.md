@@ -2,7 +2,7 @@
 title: "Centers Laboratory Discloses Data Breach Affecting 542K Individuals"
 excerpt: "A significant data breach has been disclosed by Centers Laboratory, a US-based diagnostic testing laboratory, affecting over 542,000 individuals"
 date: 2026-07-20
-category: hipaa-compliance
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

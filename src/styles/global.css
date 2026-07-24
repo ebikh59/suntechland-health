@@ -1,18 +1,26 @@
 :root {
-  --bg: #07090f;
-  --surface: #0d1117;
-  --card: #111827;
-  --border: #1e293b;
-  --accent: #00d4ff;
-  --accent-dim: #0099bb;
-  --green: #22c55e;
-  --red: #ef4444;
-  --orange: #f97316;
-  --purple: #a855f7;
-  --yellow: #eab308;
-  --text: #e2e8f0;
-  --muted: #64748b;
-  --subtle: #94a3b8;
+  /* SunTechLand — clinical "triage board" palette (dark ground, petrol accent) */
+  --bg: #0C1315;
+  --surface: #121C1F;
+  --card: #162226;
+  --border: #223035;
+  --accent: #58B7C7;
+  --accent-dim: #3E97A6;
+
+  /* semantic severity ramp — deliberately separate from the accent */
+  --red: #FF6E7B;
+  --orange: #FF9E60;
+  --yellow: #E0BA4E;
+  --green: #86BC94;
+  --purple: #A9A0E8;
+
+  --text: #E7EEF0;
+  --subtle: #B7C7CC;
+  --muted: #8398A0;
+
+  --font-display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --font-ui: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,7 +30,7 @@ html { font-size: 16px; scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-family: var(--font-ui);
   line-height: 1.6;
   min-height: 100vh;
 }
@@ -67,4 +75,23 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.75rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+
+/* ---- Redesign: typography ---- */
+h1, h2, h3, h4, .post-title, .card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+time, .meta, .post-meta, .card-meta, .source, .count {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }

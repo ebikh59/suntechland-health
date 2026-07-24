@@ -2,12 +2,9 @@
 const { category } = Astro.props as { category: string };
 
 const map: Record<string, { label: string; color: string }> = {
-  'hipaa-compliance':        { label: 'HIPAA & Compliance', color: '#00d4ff' },
-  'hospital-attacks':        { label: 'Hospital Attacks',   color: '#ef4444' },
-  'medical-device-security': { label: 'Medical Devices',    color: '#f97316' },
-  'patient-data-breaches':   { label: 'Patient Data',       color: '#eab308' },
-  'healthcare-threat-intel': { label: 'Threat Intel',       color: '#a855f7' },
-  'health-it-security':      { label: 'Health IT',          color: '#22c55e' },
+  'attacks-breaches':   { label: 'Attacks & Breaches', color: '#ef4444' },
+  'ai-healthcare':      { label: 'AI in Healthcare',   color: '#a855f7' },
+  'health-it-security': { label: 'Health IT',          color: '#22c55e' },
 };
 
 const { label, color } = map[category] ?? { label: category, color: '#94a3b8' };

@@ -2,7 +2,7 @@
 title: "HIPAA Violation Fines"
 excerpt: "The Department of Health and Human Services' Office for Civil Rights (OCR) is responsible for issuing fines for HIPAA violations"
 date: 2026-06-19
-category: hipaa-compliance
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.hipaajournal.com/hipaa-violation-fines/"

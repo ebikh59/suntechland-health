@@ -2,7 +2,7 @@
 title: "Verizon Releases Inaugural Breach Impact Study"
 excerpt: "Verizon Business has released the findings from its inaugural Breach Impact Study, which focuses on the financial impact of data"
 date: 2026-07-01
-category: hipaa-compliance
+category: attacks-breaches
 severity: Medium
 tags: [automated, healthcare-security]
 author: SunTechLand

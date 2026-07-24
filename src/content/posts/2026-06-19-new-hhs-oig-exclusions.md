@@ -2,7 +2,7 @@
 title: "New HHS-OIG Exclusions"
 excerpt: "The Department of Health and Human Services Office of Inspector General (HHS-OIG) has announced new additions to its List of Excluded Individuals and Entities"
 date: 2026-06-19
-category: hipaa-compliance
+category: health-it-security
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.hipaajournal.com/june-2026-hhs-oig-exclusions/"

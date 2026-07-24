@@ -2,7 +2,7 @@
 title: "Researchers Spot Uptick in Use of Vercel for Phishing Campaigns"
 excerpt: "Cofense has warned of a “significant” increase in phishing campaigns abusing Vercel platform"
 date: 2026-05-07
-category: hipaa-compliance
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.infosecurity-magazine.com/news/researchers-spot-uptick-vercel/"

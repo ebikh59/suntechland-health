@@ -2,7 +2,7 @@
 title: "HIPAA Compliance for Medical Spas"
 excerpt: "Medical spas that handle sensitive patient health information are subject to HIPAA compliance"
 date: 2026-06-18
-category: hipaa-compliance
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.hipaajournal.com/hipaa-compliance-for-medical-spas/"

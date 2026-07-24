@@ -2,7 +2,7 @@
 title: "Multi-million-dollar Settlement Agreed to Resolve MCNA Dental Data Breach Lawsuit"
 excerpt: "Managed Care of North America (MCNA), Inc., has agreed to a multi-million-dollar settlement to resolve a class action lawsuit stemming from a data breach"
 date: 2026-06-19
-category: hipaa-compliance
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.hipaajournal.com/mcna-dental-data-breach-settlement/"

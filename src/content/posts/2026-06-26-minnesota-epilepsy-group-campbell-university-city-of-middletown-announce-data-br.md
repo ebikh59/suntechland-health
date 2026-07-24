@@ -2,7 +2,7 @@
 title: "Minnesota Epilepsy Group; Campbell University; City of Middletown Announce Data Breaches"
 excerpt: "Data breaches have been announced by Minnesota Epilepsy Group, Campbell University, and the City of Middletown, Ohio"
 date: 2026-06-26
-category: hipaa-compliance
+category: attacks-breaches
 severity: Medium
 tags: [automated, healthcare-security]
 author: SunTechLand

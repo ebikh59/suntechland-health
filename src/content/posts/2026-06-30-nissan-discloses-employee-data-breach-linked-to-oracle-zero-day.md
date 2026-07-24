@@ -2,7 +2,7 @@
 title: "Nissan Discloses Employee Data Breach Linked to Oracle Zero-Day"
 excerpt: "A recent data breach at Nissan has highlighted the importance of cybersecurity for Australian healthcare providers, particularly in relation to the use of third-party software"
 date: 2026-06-30
-category: healthcare-threat-intel
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

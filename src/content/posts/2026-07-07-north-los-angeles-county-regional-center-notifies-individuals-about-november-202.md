@@ -2,7 +2,7 @@
 title: "North Los Angeles County Regional Center Notifies Individuals About November 2024 Ransomware Attack"
 excerpt: "North Los Angeles County Regional Center has started mailing notification letters to individuals affected by a November 2024 ransomware attack,"
 date: 2026-07-07
-category: hipaa-compliance
+category: attacks-breaches
 severity: Medium
 tags: [automated, healthcare-security]
 author: SunTechLand

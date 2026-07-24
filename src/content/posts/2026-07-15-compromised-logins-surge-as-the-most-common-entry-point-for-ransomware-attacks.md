@@ -2,7 +2,7 @@
 title: "Compromised Logins Surge as the Most Common Entry Point for Ransomware Attacks"
 excerpt: "A recent report by Sophos has revealed that compromised logins have become the most common entry point for ransomware attacks, with 79% of incidents traced back to an initial intrusion exploiting compromised identitie..."
 date: 2026-07-15
-category: hipaa-compliance
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

@@ -2,7 +2,7 @@
 title: "May 2026 Healthcare Data Breach Report"
 excerpt: "A recent report has highlighted a significant increase in healthcare data breaches, with 61 incidents affecting 500 or more individuals reported in May 2026, representing a 27.1% month-over-month increase"
 date: 2026-07-14
-category: hipaa-compliance
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

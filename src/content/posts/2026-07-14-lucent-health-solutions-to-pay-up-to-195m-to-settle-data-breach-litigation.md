@@ -2,7 +2,7 @@
 title: "Lucent Health Solutions to Pay Up to 1.95M to Settle Data Breach Litigation"
 excerpt: "A recent settlement in the United States has highlighted the importance of robust cybersecurity measures in the healthcare sector, with Lucent Health Solutions agreeing to pay up to $1.95 million to resolve a class ac..."
 date: 2026-07-14
-category: hipaa-compliance
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

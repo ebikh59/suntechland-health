@@ -2,7 +2,7 @@
 title: "Study of Healthcare Websites Shows Widespread and Risky Use of Tracking and Analytics Tools"
 excerpt: "A recent analysis of healthcare websites has revealed that the majority use marketing and analytics tools that could potentially disclose"
 date: 2026-07-10
-category: hipaa-compliance
+category: health-it-security
 severity: Medium
 tags: [automated, healthcare-security]
 author: SunTechLand

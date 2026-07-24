@@ -2,7 +2,7 @@
 title: "Okanogan Behavioral Healthcare Settles Class Action Data Breach Lawsuit"
 excerpt: "Okanogan Behavioral Healthcare, a provider of holistic behavioral health services in Okanogan County, Washington, has agreed to settle a class"
 date: 2026-06-26
-category: hipaa-compliance
+category: attacks-breaches
 severity: Medium
 tags: [automated, healthcare-security]
 author: SunTechLand

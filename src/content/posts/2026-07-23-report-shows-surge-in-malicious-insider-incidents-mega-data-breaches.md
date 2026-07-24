@@ -2,7 +2,7 @@
 title: "Report Shows Surge in Malicious Insider Incidents; Mega Data Breaches"
 excerpt: "A recent report from the Identity Theft Resource Center has revealed a surge in malicious insider incidents and mega data breaches, with at least 1,803 data compromises occurring in the first half of 2026"
 date: 2026-07-23
-category: hipaa-compliance
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

@@ -2,7 +2,7 @@
 title: "WhatsApp Discovers NSO Group-Linked Spearphishing Attempts"
 excerpt: "Meta’s WhatsApp demands contempt ruling after users report NSO Group-linked phishing"
 date: 2026-06-09
-category: hipaa-compliance
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.infosecurity-magazine.com/news/whatsapp-nso-group-spearphishing/"

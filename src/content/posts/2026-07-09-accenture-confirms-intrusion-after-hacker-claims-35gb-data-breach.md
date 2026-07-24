@@ -2,7 +2,7 @@
 title: "Accenture Confirms Intrusion After Hacker Claims 35GB Data Breach"
 excerpt: "A major security breach has been confirmed by Accenture, a global consulting firm, following a claim by a hacker that they had stolen 35GB of data from the company"
 date: 2026-07-09
-category: hipaa-compliance
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

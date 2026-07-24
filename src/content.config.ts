@@ -8,11 +8,8 @@ const posts = defineCollection({
     excerpt: z.string(),
     date: z.coerce.date(),
     category: z.enum([
-      'hipaa-compliance',
-      'hospital-attacks',
-      'medical-device-security',
-      'patient-data-breaches',
-      'healthcare-threat-intel',
+      'attacks-breaches',
+      'ai-healthcare',
       'health-it-security',
     ]),
     tags: z.array(z.string()).default([]),

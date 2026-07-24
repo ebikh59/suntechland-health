@@ -2,7 +2,7 @@
 title: "Physicians Primary Care of Southwest Florida Agrees to Data Breach Settlement"
 excerpt: "A recent data breach settlement in the United States has significant implications for Australian healthcare providers, highlighting the importance of robust cybersecurity measures to protect sensitive patient information"
 date: 2026-07-15
-category: hipaa-compliance
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

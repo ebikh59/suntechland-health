@@ -2,7 +2,7 @@
 title: "Cybercriminals Pose as Interpol in Phishing Emails to Infect Victims With Ransomware"
 excerpt: "A phishing campaign is underway where cybercriminals are posing as Interpol, targeting small businesses across the globe, including those in Europe, Asia, the Middle East, and North America"
 date: 2026-07-02
-category: hipaa-compliance
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

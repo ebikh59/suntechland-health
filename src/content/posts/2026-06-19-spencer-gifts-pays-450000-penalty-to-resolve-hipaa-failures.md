@@ -2,7 +2,7 @@
 title: "Spencer Gifts Pays $450,000 Penalty to Resolve HIPAA Failures"
 excerpt: "Spencer Gifts LLC, a national retail company, has agreed to pay a $450,000 penalty to settle alleged violations of the Health Insurance Portability and Accountability Act (HIPAA)"
 date: 2026-06-19
-category: hipaa-compliance
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.hipaajournal.com/spencer-gifts-hipaa-settlement/"

@@ -2,7 +2,7 @@
 title: "Flo Health; Google; Flurry to Pay $59.5M to Settle Privacy Lawsuit (Updated)"
 excerpt: "Flo Health, Inc., Google LLC, and Flurry, Inc., have agreed to pay $59.5 million to settle a litigation regarding privacy concerns"
 date: 2026-06-18
-category: hipaa-compliance
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.hipaajournal.com/flo-health-google-flurry-59-5m-settlement-privacy-lawsuit/"

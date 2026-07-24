@@ -2,7 +2,7 @@
 title: "NHS Warns Staff Over Unauthorized Access to Patient Data "
 excerpt: "A stern warning has been issued to staff within Britain's health service, the NHS, regarding the unauthorized access of patient data, with potential penalties including jail time for those found guilty"
 date: 2026-07-10
-category: patient-data-breaches
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

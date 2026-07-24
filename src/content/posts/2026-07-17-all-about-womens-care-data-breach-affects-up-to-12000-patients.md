@@ -2,7 +2,7 @@
 title: "All About Women’s Care Data Breach Affects Up to 12,000 Patients"
 excerpt: "A recent data breach at All About Women's Care in Colorado has compromised the data of up to 12,000 patients, highlighting the importance of robust cybersecurity measures in the healthcare sector"
 date: 2026-07-17
-category: hipaa-compliance
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

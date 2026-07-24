@@ -2,7 +2,7 @@
 title: "Bradford Health Services; Bradford Health Partners Settle Data Breach Lawsuit"
 excerpt: "Bradford Health Services, LLC, and Bradford Health Partners, LLC, were sued over a December 2023 cybersecurity incident that exposed the"
 date: 2026-06-25
-category: hipaa-compliance
+category: attacks-breaches
 severity: Medium
 tags: [automated, healthcare-security]
 author: SunTechLand

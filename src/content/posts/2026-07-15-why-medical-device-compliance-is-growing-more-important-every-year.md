@@ -2,7 +2,7 @@
 title: "Why Medical Device Compliance Is Growing More Important Every Year"
 excerpt: "The medical device industry, valued at around $570 billion in 2025 and expected to surpass $600 billion in 2026, is a rapidly growing segment of the global economy"
 date: 2026-07-15
-category: hipaa-compliance
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

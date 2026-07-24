@@ -2,7 +2,7 @@
 title: "ANCHOR-CI Framework Strengthens Partnerships and Information Sharing to Secure Critical Infrastructure"
 excerpt: "The Department of Homeland Security (DHS) Cybersecurity and Infrastructure Security Agency (CISA) has announced the formation of the Alliance of"
 date: 2026-07-03
-category: hipaa-compliance
+category: health-it-security
 severity: Medium
 tags: [automated, healthcare-security]
 author: SunTechLand

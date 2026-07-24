@@ -2,7 +2,7 @@
 title: "Drug and Alcohol Treatment Services Settles Data Breach Litigation"
 excerpt: "A recent data breach settlement in the United States has significant implications for Australian healthcare providers"
 date: 2026-07-09
-category: hipaa-compliance
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

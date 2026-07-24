@@ -2,7 +2,7 @@
 title: "HIPAA Violation Cases: Types & Consequences"
 excerpt: "The Department of Health and Human Services has seen a rise in HIPAA violation cases, which are compliance investigations stemming from reported data breaches"
 date: 2026-06-18
-category: hipaa-compliance
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.hipaajournal.com/hipaa-violation-cases/"

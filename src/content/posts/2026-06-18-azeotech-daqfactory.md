@@ -4,7 +4,7 @@ excerpt: "View CSAF
 Summary
 Successful exploitation of this vulnerability could allow an attacker to upload malicious .ctl files that may lead to arbitrary code execution"
 date: 2026-06-18
-category: hipaa-compliance
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-02"

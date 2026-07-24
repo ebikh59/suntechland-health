@@ -2,7 +2,7 @@
 title: "Aitkin County Health and Human Services Data Breach Affects 81,000 Individuals"
 excerpt: "Aitkin County Health and Human Services in Minnesota has identified a breach of its email environment"
 date: 2026-07-10
-category: hipaa-compliance
+category: attacks-breaches
 severity: Medium
 tags: [automated, healthcare-security]
 author: SunTechLand

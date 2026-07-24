@@ -14,12 +14,9 @@ const featured = allPosts.find(p => p.data.featured) ?? allPosts[0];
 const latest = allPosts.filter(p => p.id !== featured?.id).slice(0, 6);
 
 const categories = [
-  { slug: 'hipaa-compliance',        label: 'HIPAA & Compliance', color: '#00d4ff' },
-  { slug: 'hospital-attacks',        label: 'Hospital Attacks',   color: '#ef4444' },
-  { slug: 'medical-device-security', label: 'Medical Devices',    color: '#f97316' },
-  { slug: 'patient-data-breaches',   label: 'Patient Data',       color: '#eab308' },
-  { slug: 'healthcare-threat-intel', label: 'Threat Intel',       color: '#a855f7' },
-  { slug: 'health-it-security',      label: 'Health IT',          color: '#22c55e' },
+  { slug: 'attacks-breaches',   label: 'Attacks & Breaches', color: '#ef4444' },
+  { slug: 'ai-healthcare',      label: 'AI in Healthcare',   color: '#a855f7' },
+  { slug: 'health-it-security', label: 'Health IT',          color: '#22c55e' },
 ];
 ---
 

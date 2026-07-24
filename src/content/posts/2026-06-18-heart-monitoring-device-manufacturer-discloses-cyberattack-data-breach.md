@@ -2,7 +2,7 @@
 title: "Heart Monitoring Device Manufacturer Discloses Cyberattack; Data Breach"
 excerpt: "iRhythm Holdings Inc., a heart monitoring device manufacturer, has disclosed a cyberattack and data breach to the U.S"
 date: 2026-06-18
-category: hipaa-compliance
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.hipaajournal.com/irhythm-data-breach/"

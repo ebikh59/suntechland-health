@@ -2,7 +2,7 @@
 title: "23andMe Pays $18 Million to Settle Multistate Data Breach Lawsuit"
 excerpt: "A recent settlement in the United States has seen 23andMe, a genetic testing company, agree to pay $18 million to resolve allegations of cybersecurity failures that led to a data breach affecting 6.9 million customers"
 date: 2026-07-20
-category: hipaa-compliance
+category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia]
 author: SunTechLand Staff

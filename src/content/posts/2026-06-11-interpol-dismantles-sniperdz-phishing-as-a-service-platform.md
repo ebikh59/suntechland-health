@@ -2,7 +2,7 @@
 title: "Interpol Dismantles SniperDz Phishing-as-a-Service Platform"
 excerpt: "New revelations by Group-IB expose the full scale of the decade-old SniperDz phishing operation"
 date: 2026-06-11
-category: hipaa-compliance
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.infosecurity-magazine.com/news/interpol-dismantles-sniperdz/"

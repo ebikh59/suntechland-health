@@ -2,7 +2,7 @@
 title: "Attackers Abuse Shared Content for ChatGPT Phishing Campaign"
 excerpt: "Push Security says threat actors are delivering malware hosted on chatgpt.com/s/ domain"
 date: 2026-06-01
-category: hipaa-compliance
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.infosecurity-magazine.com/news/attackers-shared-content-chatgpt/"

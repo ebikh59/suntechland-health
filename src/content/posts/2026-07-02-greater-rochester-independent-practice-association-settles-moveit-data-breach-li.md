@@ -2,7 +2,7 @@
 title: "Greater Rochester Independent Practice Association Settles MOVEit Data Breach Litigation"
 excerpt: "A settlement has been agreed to resolve claims against Greater Rochester Independent Practice Association (GRIPA) arising from the May 2023"
 date: 2026-07-02
-category: hipaa-compliance
+category: attacks-breaches
 severity: Medium
 tags: [automated, healthcare-security]
 author: SunTechLand

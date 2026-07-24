@@ -2,7 +2,7 @@
 title: "Zara Data Breach Impacts Nearly 200,000 Customers"
 excerpt: "ShinyHunters gets away with emails and other data on 200,000 Zara customers"
 date: 2026-05-11
-category: health-it-security
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.infosecurity-magazine.com/news/zara-data-breach-impacts-200000/"

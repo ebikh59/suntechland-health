@@ -2,7 +2,7 @@
 title: "DOJ’s Using Advanced Data Analytics and AI Tools to Combat Healthcare Fraud Before Payment"
 excerpt: "The U.S"
 date: 2026-06-30
-category: hipaa-compliance
+category: ai-healthcare
 severity: Medium
 tags: [automated, healthcare-security]
 author: SunTechLand

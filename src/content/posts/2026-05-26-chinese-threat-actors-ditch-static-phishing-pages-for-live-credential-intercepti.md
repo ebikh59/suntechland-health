@@ -2,7 +2,7 @@
 title: "Chinese Threat Actors Ditch Static Phishing Pages for Live Credential Interception"
 excerpt: "Almost all organizations impersonated by Chinese phishing platforms are non-Chinese entities, suggesting operators deliberately avoid domestic targets"
 date: 2026-05-26
-category: hipaa-compliance
+category: attacks-breaches
 tags: [automated, security-news]
 author: SunTechLand Staff
 source: "https://www.infosecurity-magazine.com/news/chinese-phishing-live-credential/"
