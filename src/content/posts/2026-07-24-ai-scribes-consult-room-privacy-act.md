@@ -3,7 +3,6 @@ title: "AI Scribes Are in Your Consult Room. Here's What the Privacy Act Expects
 excerpt: "Ambient AI scribes are spreading fast through Australian general practice. Consent, offshore processing and who owns the mistakes are the three questions most practices haven't answered."
 date: 2026-07-24
 category: ai-healthcare
-severity: High
 tags: [ai, privacy, australia, general-practice, consent, healthcare-security]
 author: SunTechLand Staff
 ---

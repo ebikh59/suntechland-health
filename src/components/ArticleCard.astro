@@ -20,7 +20,9 @@ const sevClass = severity ? `s-${severity.toLowerCase()}` : 's-none';
 
 <article class={`case ${sevClass}`}>
   <div class="case-triage">
-    {severity && <SeverityBadge severity={severity} />}
+    {severity
+      ? <SeverityBadge severity={severity} />
+      : <span class="kind-tag">Analysis</span>}
   </div>
 
   <div class="case-body">
@@ -63,6 +65,14 @@ const sevClass = severity ? `s-${severity.toLowerCase()}` : 's-none';
 }
 
 .case-triage { padding-top: 0.15rem; }
+.kind-tag {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
 
 .case-body { display: flex; flex-direction: column; gap: 0.45rem; min-width: 0; }
 h3 {

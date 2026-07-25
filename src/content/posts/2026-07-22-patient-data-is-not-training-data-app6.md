@@ -3,7 +3,6 @@ title: "Your Patient Data Is Not Training Data: The APP 6 Trap in Health AI"
 excerpt: "The OAIC's AI guidance is blunt on the point Australian health providers keep getting wrong — collecting information for care does not give anyone permission to train a model on it."
 date: 2026-07-22
 category: ai-healthcare
-severity: High
 tags: [ai, privacy, australia, app6, oaic, healthcare-security]
 author: SunTechLand Staff
 ---

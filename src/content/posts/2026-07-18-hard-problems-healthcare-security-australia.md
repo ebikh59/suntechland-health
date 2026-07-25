@@ -3,7 +3,6 @@ title: "The Hard Problems in Australian Healthcare Security Nobody Wants to Say 
 excerpt: "Unpatchable medical devices, break-glass access, and a sector that cannot take its systems offline. The uncomfortable trade-offs behind healthcare cyber security in Australia."
 date: 2026-07-18
 category: ai-healthcare
-severity: Medium
 tags: [australia, essential-eight, patient-safety, medical-devices, healthcare-security, analysis]
 author: SunTechLand Staff
 ---
