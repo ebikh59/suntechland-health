@@ -81,7 +81,7 @@ const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', m
           <div class="lead-meta">
             {lead.data.severity
               ? <SeverityBadge severity={lead.data.severity} />
-              : <span class="lead-kind">Analysis</span>}
+              : (lead.data.category !== 'ai-healthcare' && <span class="lead-kind">Analysis</span>)}
             <CategoryBadge category={lead.data.category} />
             <time datetime={lead.data.date.toISOString()}>{leadDate}</time>
           </div>

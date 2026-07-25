@@ -15,15 +15,20 @@ interface Props {
 
 const { title, excerpt, date, category, slug, image, author, severity } = Astro.props;
 const formattedDate = date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
-const sevClass = severity ? `s-${severity.toLowerCase()}` : 's-none';
+
+/* AI in Healthcare is analysis, not triaged incidents — no severity column at all */
+const isAnalysis = category === 'ai-healthcare';
+const sevClass = isAnalysis ? 'analysis' : (severity ? `s-${severity.toLowerCase()}` : 's-none');
 ---
 
 <article class={`case ${sevClass}`}>
-  <div class="case-triage">
-    {severity
-      ? <SeverityBadge severity={severity} />
-      : <span class="kind-tag">Analysis</span>}
-  </div>
+  {!isAnalysis && (
+    <div class="case-triage">
+      {severity
+        ? <SeverityBadge severity={severity} />
+        : <span class="kind-tag">Analysis</span>}
+    </div>
+  )}
 
   <div class="case-body">
     <h3><a href={`/post/${slug}`}>{title}</a></h3>
@@ -61,8 +66,12 @@ const sevClass = severity ? `s-${severity.toLowerCase()}` : 's-none';
 
 @container (min-width: 660px) {
   .case { grid-template-columns: 104px 1fr 132px; align-items: start; }
+  .case.analysis { grid-template-columns: 1fr 132px; }
   .case-chart { text-align: right; }
 }
+
+/* analysis rows: no severity spine, accent-tinted edge instead */
+.case.analysis { border-left-color: color-mix(in srgb, var(--accent) 55%, transparent); }
 
 .case-triage { padding-top: 0.15rem; }
 .kind-tag {
