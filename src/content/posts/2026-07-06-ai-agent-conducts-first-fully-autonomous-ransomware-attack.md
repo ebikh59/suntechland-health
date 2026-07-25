@@ -2,7 +2,7 @@
 title: "AI Agent Conducts First Fully Autonomous Ransomware Attack"
 excerpt: "Researchers have identified what they believe to be the first agentic ransomware attack"
 date: 2026-07-06
-category: ai-healthcare
+category: attacks-breaches
 severity: Medium
 tags: [automated, healthcare-security]
 author: SunTechLand
