@@ -1,7 +1,7 @@
 ---
 title: "Australian Healthcare Data Breaches — Live Tracker (OAIC NDB)"
 excerpt: "Health service providers remain the top sector for notifiable data breaches in Australia. Latest OAIC figures, updated automatically."
-date: 2026-07-29
+date: 2026-07-30
 category: attacks-breaches
 severity: High
 tags: [automated, healthcare-security, australia, ndb, tracker]
