@@ -1,11 +1,12 @@
 :root {
   /* SunTechLand — clinical "triage board" palette (dark ground, petrol accent) */
-  --bg: #0C1315;
-  --surface: #121C1F;
-  --card: #162226;
-  --border: #223035;
-  --accent: #58B7C7;
-  --accent-dim: #3E97A6;
+  --bg: #071310;
+  --surface: #0D1D19;
+  --card: #122620;
+  --border: #254139;
+  --accent: #67D6B4;
+  --accent-dim: #3FA889;
+  --accent-soft: #153D32;
 
   /* semantic severity ramp — deliberately separate from the accent */
   --red: #FF6E7B;
@@ -20,9 +21,9 @@
   --med:  #E0BA4E;
   --low:  #86BC94;
 
-  --text: #E7EEF0;
-  --subtle: #B7C7CC;
-  --muted: #8398A0;
+  --text: #F1F5EA;
+  --subtle: #C0CEC5;
+  --muted: #82998F;
 
   --font-display: Georgia, "Iowan Old Style", "Times New Roman", serif;
   --font-ui: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -32,15 +33,16 @@
 /* Light theme — clinical ground, same petrol accent shifted for contrast */
 @media (prefers-color-scheme: light) {
   :root {
-    --bg: #F1F4F5;
+    --bg: #F4F5EF;
     --surface: #FFFFFF;
     --card: #F7F9FA;
     --border: #D8E1E3;
-    --accent: #0E5561;
-    --accent-dim: #0A3E48;
-    --text: #101A1D;
-    --subtle: #3D4F55;
-    --muted: #6B7F86;
+    --accent: #0B6A51;
+    --accent-dim: #07513E;
+    --accent-soft: #DDEDE6;
+    --text: #101A16;
+    --subtle: #41544B;
+    --muted: #6A7C73;
     --crit: #B32334;
     --high: #B35C22;
     --med:  #97781F;
@@ -54,6 +56,10 @@ html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
+  background-image:
+    radial-gradient(circle at 8% -10%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 28rem),
+    linear-gradient(color-mix(in srgb, var(--border) 17%, transparent) 1px, transparent 1px);
+  background-size: auto, 100% 80px;
   color: var(--text);
   font-family: var(--font-ui);
   line-height: 1.6;
@@ -66,10 +72,12 @@ a:hover { color: var(--accent-dim); }
 img { max-width: 100%; height: auto; display: block; }
 
 .container {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
+
+::selection { background: var(--accent); color: #06110e; }
 
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }

@@ -1,9 +1,9 @@
 ---
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/blog', label: 'News' },
+  { href: '/blog', label: 'Intelligence' },
   { href: '/category/attacks-breaches', label: 'Attacks & Breaches' },
-  { href: '/category/ai-healthcare', label: 'AI in Healthcare' },
+  { href: '/category/ai-healthcare', label: 'AI & Health' },
+  { href: '/category/health-it-security', label: 'Health IT' },
   { href: '/about', label: 'About' },
 ];
 
@@ -13,14 +13,8 @@ const currentPath = Astro.url.pathname;
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="logo">
-      <span class="logo-icon" style="color:var(--accent)">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-          <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <polygon points="14,6 22,10 22,18 14,22 6,18 6,10" fill="none" stroke="currentColor" stroke-width="0.75" opacity="0.4"/>
-          <circle cx="14" cy="14" r="3" fill="currentColor"/>
-        </svg>
-      </span>
-      <span class="logo-text">SunTech<span class="logo-accent">Land</span></span>
+      <span class="logo-mark" aria-hidden="true"><span></span></span>
+      <span class="logo-text">SunTech<span class="logo-accent">Land</span><small>Health intelligence</small></span>
       <span class="locale">AU</span>
     </a>
 
@@ -36,8 +30,8 @@ const currentPath = Astro.url.pathname;
     </nav>
 
     <div class="header-actions">
-      <a href="/blog" class="cta-btn">Latest News</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <a href="/post/australia-healthcare-data-breaches-tracker" class="cta-btn">NDB Tracker</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -56,6 +50,7 @@ const currentPath = Astro.url.pathname;
   btn?.addEventListener('click', () => {
     nav?.classList.toggle('open');
     btn?.classList.toggle('open');
+    btn?.setAttribute('aria-expanded', String(nav?.classList.contains('open') ?? false));
   });
 </script>
 
@@ -64,29 +59,44 @@ const currentPath = Astro.url.pathname;
   position: sticky;
   top: 0;
   z-index: 100;
-  background: color-mix(in srgb, var(--bg) 90%, transparent);
-  backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
 }
 .header-inner {
   display: flex;
   align-items: center;
   gap: 2rem;
-  height: 64px;
+  min-height: 76px;
 }
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
   text-decoration: none;
   flex-shrink: 0;
 }
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: inset 0 0 0 5px color-mix(in srgb, var(--accent) 8%, transparent);
+}
+.logo-mark::before, .logo-mark::after, .logo-mark span { content: ''; display: block; position: absolute; background: var(--accent); border-radius: 2px; }
+.logo-mark::before { width: 16px; height: 3px; }
+.logo-mark::after { width: 3px; height: 16px; }
+.logo-mark span { width: 5px; height: 5px; }
 .logo-text {
-  font-size: 1.2rem;
+  font-family: var(--font-display);
+  font-size: 1.28rem;
   font-weight: 800;
   color: var(--text);
   letter-spacing: -0.02em;
 }
+.logo-text small { display: block; margin-top: 0.08rem; font-family: var(--font-mono); font-size: 0.48rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 .logo-accent { color: var(--accent); }
 .locale {
   font-family: var(--font-mono);
@@ -117,15 +127,16 @@ const currentPath = Astro.url.pathname;
 }
 .nav-link:hover { color: var(--text); background: var(--surface); }
 .nav-link.active { color: var(--accent); }
+.nav-link.active::after { content: ''; display: block; width: 18px; height: 1px; margin: 0.28rem auto -0.28rem; background: var(--accent); }
 
 .header-actions { display: flex; align-items: center; gap: 1rem; }
 .cta-btn {
   font-size: 0.82rem;
   font-weight: 700;
-  color: #000;
+  color: #06110e;
   background: var(--accent);
-  padding: 0.45rem 1rem;
-  border-radius: 6px;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
   white-space: nowrap;
   transition: opacity 0.2s;
 }
