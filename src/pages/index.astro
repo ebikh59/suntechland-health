@@ -38,17 +38,33 @@ const counts: Record<string, number> = Object.fromEntries(
 );
 
 const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+const deskDate = new Date().toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long' });
 ---
 
 <BaseLayout title="Australian Healthcare Cyber Security News & Breach Intelligence">
 
+  <section class="container masthead">
+    <div class="masthead-copy">
+      <p class="edition">Australian health security desk <span>{deskDate}</span></p>
+      <h1>Cyber intelligence for a health system under pressure.</h1>
+      <p class="masthead-intro">Independent reporting on the breaches, privacy decisions and emerging technology risks shaping Australian healthcare.</p>
+    </div>
+    <div class="masthead-note">
+      <span class="signal"><i></i> Intelligence feed active</span>
+      <strong>{allPosts.length}</strong>
+      <small>reports in the archive</small>
+      <a href="/blog">Explore all intelligence →</a>
+    </div>
+  </section>
+
   <!-- ── Hero: sector vitals + lead story ─────────────────────────── -->
   <section class="container hero">
-    <div class="eyebrow">Sector vitals — OAIC Notifiable Data Breaches</div>
+    <div class="eyebrow">Briefing room — OAIC sector data &amp; lead intelligence</div>
 
     <div class="hero-grid">
       <aside class="vitals">
-        <h2>Health is Australia&rsquo;s most-breached sector</h2>
+        <span class="panel-label">Sector signal 01</span>
+        <h2>Health remains Australia&rsquo;s most-breached sector</h2>
 
         {figure ? (
           <div>
@@ -78,6 +94,7 @@ const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', m
 
       {lead && (
         <article class={`lead s-${(lead.data.severity ?? 'none').toLowerCase()}`}>
+          <span class="panel-label">Lead briefing</span>
           <div class="lead-meta">
             {lead.data.severity
               ? <SeverityBadge severity={lead.data.severity} />
@@ -87,7 +104,7 @@ const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', m
           </div>
           <h1><a href={`/post/${lead.id}`}>{lead.data.title}</a></h1>
           <p class="lead-excerpt">{lead.data.excerpt}</p>
-          <a href={`/post/${lead.id}`} class="lead-more">Read the full analysis →</a>
+          <a href={`/post/${lead.id}`} class="lead-more">Open intelligence brief <span>→</span></a>
         </article>
       )}
     </div>
@@ -96,7 +113,7 @@ const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', m
   <!-- ── Triage board ─────────────────────────────────────────────── -->
   <section class="container board">
     <div class="eyebrow eyebrow-row">
-      <span>Latest — triaged by impact on Australian providers</span>
+      <span>Latest intelligence — triaged for Australian providers</span>
       <a href="/blog" class="see-all">View all →</a>
     </div>
     <div class="cases">
@@ -117,7 +134,7 @@ const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', m
 
   <!-- ── Sections ─────────────────────────────────────────────────── -->
   <section class="container sections">
-    <div class="eyebrow">Sections</div>
+    <div class="eyebrow">Intelligence desks</div>
     <div class="cat-grid">
       {categories.map(cat => (
         <a href={`/category/${cat.slug}`} class="cat">
@@ -137,6 +154,49 @@ const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', m
 </BaseLayout>
 
 <style>
+/* ── editorial masthead ── */
+.masthead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+  padding-top: clamp(3.5rem, 8vw, 7rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+.edition {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.edition::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
+.edition span { color: var(--muted); }
+.masthead h1 {
+  max-width: 850px;
+  font-size: clamp(2.7rem, 6.7vw, 6rem);
+  line-height: 0.97;
+  letter-spacing: -0.055em;
+  font-weight: 500;
+}
+.masthead-intro { max-width: 690px; margin-top: 1.7rem; font-size: clamp(1rem, 1.6vw, 1.2rem); color: var(--subtle); line-height: 1.65; }
+.masthead-note { border-left: 1px solid var(--border); padding-left: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; }
+.signal { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.signal i { display: inline-block; width: 7px; height: 7px; margin-right: 0.45rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 12%, transparent); }
+.masthead-note strong { margin-top: 1.6rem; font-family: var(--font-display); font-size: 3.8rem; line-height: 0.9; font-weight: 500; }
+.masthead-note small { margin-top: 0.45rem; color: var(--muted); }
+.masthead-note a { margin-top: 1.6rem; font-size: 0.78rem; font-weight: 700; }
+@media (max-width: 760px) {
+  .masthead { grid-template-columns: 1fr; }
+  .masthead-note { display: none; }
+  .edition { align-items: flex-start; flex-wrap: wrap; }
+  .edition span { width: 100%; margin-left: 2.4rem; }
+}
+
 /* ── shared ── */
 .eyebrow {
   font-family: var(--font-mono);
@@ -163,20 +223,21 @@ const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', m
   white-space: nowrap;
 }
 
-.hero { margin-top: 2rem; }
+.hero { margin-top: 0; }
 .hero-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
-@media (min-width: 980px) { .hero-grid { grid-template-columns: 360px 1fr; } }
+@media (min-width: 980px) { .hero-grid { grid-template-columns: 380px 1fr; } }
 
 /* ── vitals panel ── */
 .vitals {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 1.3rem;
+  border-radius: 18px;
+  padding: clamp(1.5rem, 3vw, 2rem);
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+.panel-label { font-family: var(--font-mono); font-size: 0.61rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 .vitals h2 {
   font-family: var(--font-display);
   font-size: 1.15rem;
@@ -187,7 +248,7 @@ const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', m
 .figure {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
-  font-size: 3.3rem;
+  font-size: 4.1rem;
   line-height: 1;
   font-weight: 600;
   letter-spacing: -0.03em;
@@ -215,8 +276,8 @@ const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', m
   background: var(--surface);
   border: 1px solid var(--border);
   border-left: 4px solid var(--border);
-  border-radius: 6px;
-  padding: 1.6rem;
+  border-radius: 18px;
+  padding: clamp(1.7rem, 4vw, 3.2rem);
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
@@ -245,8 +306,8 @@ const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', m
 }
 .lead h1 {
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
-  line-height: 1.12;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.04;
   letter-spacing: -0.02em;
   font-weight: 700;
   text-wrap: balance;
@@ -254,28 +315,29 @@ const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', m
 .lead h1 a { color: var(--text); }
 .lead h1 a:hover { color: var(--accent); }
 .lead-excerpt { color: var(--subtle); max-width: 62ch; line-height: 1.6; }
-.lead-more { font-size: 0.86rem; color: var(--accent); font-weight: 600; }
+.lead-more { align-self: flex-start; margin-top: 0.6rem; font-size: 0.82rem; color: var(--accent); font-weight: 700; padding-bottom: 0.35rem; border-bottom: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); }
+.lead-more span { margin-left: 0.65rem; }
 .lead-more:hover { color: var(--text); }
 
 /* ── board ── */
-.board { margin-top: 2.75rem; }
+.board { margin-top: 4.5rem; }
 
 /* ── sections ── */
-.sections { margin-top: 2.75rem; }
+.sections { margin-top: 4.5rem; }
 .cat-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
 @media (min-width: 760px) { .cat-grid { grid-template-columns: repeat(3, 1fr); } }
 .cat {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 1.2rem;
+  border-radius: 14px;
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, transform 0.15s, background 0.15s;
 }
-.cat:hover { border-color: var(--accent); }
-.cat h4 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--text); }
+.cat:hover { border-color: var(--accent); transform: translateY(-3px); background: var(--card); }
+.cat h4 { font-family: var(--font-display); font-size: 1.55rem; font-weight: 600; color: var(--text); }
 .cat p { font-size: 0.85rem; color: var(--subtle); flex: 1; }
 .cat .count {
   font-family: var(--font-mono);
