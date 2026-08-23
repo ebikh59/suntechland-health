@@ -1,6 +1,6 @@
 ---
 title: "BlackFile Group Targets Retail and Hospitality with Vishing Attacks"
-excerpt: "BlackFile Group, a new data theft and extortion threat, is leveraging sophisticated vishing attacks to target retail and hospitality sectors, posing a significant risk."
+excerpt: "BlackFile Group, a new data theft and extortion threat, uses sophisticated vishing attacks. Healthcare entities must be vigilant against these evolving cyber risks."
 date: 2026-04-27
 category: attacks-breaches
 severity: High
