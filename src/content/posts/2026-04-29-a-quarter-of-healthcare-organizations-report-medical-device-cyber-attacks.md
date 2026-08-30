@@ -1,6 +1,6 @@
 ---
 title: "A Quarter of Healthcare Organizations Report Medical Device Cyber-Attacks"
-excerpt: "A RunSafe report reveals 25% of healthcare organizations suffered medical device cyber-attacks, severely disrupting patient care and jeopardizing patient safety."
+excerpt: "New report: 25% of healthcare organizations experienced medical device cyber-attacks, causing severe patient care disruptions and safety risks."
 date: 2026-04-29
 severity: Critical
 category: attacks-breaches
