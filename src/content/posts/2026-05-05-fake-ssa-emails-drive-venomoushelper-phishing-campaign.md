@@ -1,6 +1,6 @@
 ---
 title: "Fake SSA Emails Drive Venomous#Helper Phishing Campaign"
-excerpt: "Venomous#Helper phishing leverages fake SSA emails & signed RMM software for persistent network access, posing critical risks to sensitive healthcare data."
+excerpt: "Healthcare organizations face critical risk from Venomous#Helper phishing, which uses fake SSA emails and signed RMM software for persistent network access."
 date: 2026-05-05
 severity: Critical
 category: attacks-breaches
