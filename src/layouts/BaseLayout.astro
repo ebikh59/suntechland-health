@@ -16,7 +16,7 @@ interface Props {
 
 const {
   title,
-  description = 'SunTechLand — Healthcare cybersecurity news, HIPAA compliance updates, hospital attack alerts, and medical device security intelligence.',
+  description = 'Australian healthcare cybersecurity intelligence covering data breaches, clinical AI governance, digital health risk and practical security guidance.',
   image = '/og-default.png',
   type = 'website',
   canonical,
@@ -25,7 +25,7 @@ const {
   articleSection,
 } = Astro.props;
 
-const siteUrl = 'https://suntechland.com';
+const siteUrl = 'https://www.suntechland.com';
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 const ogImage = image.startsWith('http') ? image : new URL(image, siteUrl).href;
 
@@ -52,7 +52,7 @@ const jsonLd = type === 'article'
       '@type': 'WebSite',
       name: 'SunTechLand',
       url: siteUrl,
-      description: 'Healthcare cybersecurity news, HIPAA compliance, hospital attack alerts, and medical device security.',
+      description: 'Australian healthcare cybersecurity intelligence, breach tracking and practical security guidance.',
       potentialAction: {
         '@type': 'SearchAction',
         target: { '@type': 'EntryPoint', urlTemplate: `${siteUrl}/blog?q={search_term_string}` },

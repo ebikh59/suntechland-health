@@ -1,6 +1,7 @@
 ---
 const navLinks = [
   { href: '/blog', label: 'Intelligence' },
+  { href: '/resources', label: 'Resources' },
   { href: '/category/attacks-breaches', label: 'Attacks & Breaches' },
   { href: '/category/ai-healthcare', label: 'AI & Health' },
   { href: '/category/health-it-security', label: 'Health IT' },
@@ -175,7 +176,7 @@ const currentPath = Astro.url.pathname;
 .mobile-nav-link:hover { color: var(--accent); }
 .mobile-tracker { color: var(--accent); font-weight: 700; }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
   .main-nav { display: none; }
   .menu-toggle { display: flex; }
 }

@@ -1,0 +1,77 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+const sources = [
+  { label: 'ACSQHC pragmatic AI guidance', href: 'https://www.safetyandquality.gov.au/news-and-media/latest-news/pragmatic-artificial-intelligence-ai-guidance-clinicians' },
+  { label: 'AI implementation in hospitals', href: 'https://www.safetyandquality.gov.au/resources/ai-implementation-hospitals-legislation-policy-guidelines-and-principles-and-evidence-about-quality-and-safety' },
+  { label: '2026 clinical governance model', href: 'https://www.safetyandquality.gov.au/clinical-topics/clinical-governance/2026-national-model' },
+];
+---
+<GuideLayout title="Healthcare AI Governance Checklist" description="Questions Australian healthcare organisations should answer before deploying an AI scribe, clinical model or administrative automation." eyebrow="Clinical AI" updated="12 September 2026" updatedIso="2026-09-12" readingTime="8 minute guide" sources={sources}>
+  <h2>AI belongs inside clinical governance</h2>
+  <p>An AI tool is not safe merely because it saves time or has been used elsewhere. Its outputs interact with clinical judgement, patient information, workflows and professional responsibilities. Governance should therefore connect executives, clinicians, safety and quality teams, privacy, security, legal, procurement and consumers—not leave the decision solely with IT or an enthusiastic department.</p>
+  <p>The 2026 National Model for Clinical Governance explicitly places oversight of digitally enabled care, data privacy and the safe and ethical use of automated systems within leadership accountability. Treat AI as an ongoing clinical and operational risk, not a one-time software purchase.</p>
+  <div class="callout"><strong>Define the decision boundary.</strong> State exactly what the system may recommend, record or automate—and what always requires informed human judgement.</div>
+
+  <h2>1. Purpose and evidence</h2>
+  <ul>
+    <li>What precise problem are we solving, and how will better care or safer work be measured?</li>
+    <li>Is there evidence for this intended population, clinical setting, language and workflow?</li>
+    <li>What are the known limitations, excluded uses and failure modes?</li>
+    <li>Is the output advisory, documentation support, prioritisation or an input to a clinical decision?</li>
+    <li>What safer non-AI alternative was considered?</li>
+  </ul>
+
+  <h2>2. Patient information and transparency</h2>
+  <ul>
+    <li>What patient and staff information enters the system, including prompts, audio and metadata?</li>
+    <li>Where is information processed and stored, and which subcontractors can access it?</li>
+    <li>Is information used to train or improve any model? Can that use be disabled contractually and technically?</li>
+    <li>What privacy notice, consent or conversation is appropriate for the use case?</li>
+    <li>Can people ask questions, decline participation or obtain human review without compromising care?</li>
+  </ul>
+
+  <h2>3. Security and supplier assurance</h2>
+  <ul>
+    <li>Does the service support strong identity controls, least privilege, audit logs and timely access revocation?</li>
+    <li>How are integrations with clinical systems authenticated and limited?</li>
+    <li>What happens to data after account closure, contract termination or a support request?</li>
+    <li>How quickly must the supplier report vulnerabilities, incidents and material model changes?</li>
+    <li>Can the organisation retrieve logs and evidence without depending entirely on the supplier?</li>
+    <li>What are the continuity arrangements if the service is unavailable or withdrawn?</li>
+  </ul>
+
+  <h2>4. Human oversight and workflow safety</h2>
+  <p>Specify who reviews outputs, what review means and how corrections are captured. “Human in the loop” is too vague if staff are overloaded or the interface encourages automatic acceptance.</p>
+  <ul>
+    <li>Can the reviewer see the information and reasoning context needed to challenge an output?</li>
+    <li>Could automation bias cause plausible but incorrect text to enter the health record?</li>
+    <li>How are urgent, uncertain or out-of-scope cases escalated?</li>
+    <li>Does use shift work or risk onto another team, patient group or point in the care journey?</li>
+    <li>Are staff trained on limitations, privacy, cybersecurity and their continuing professional responsibility?</li>
+  </ul>
+
+  <h2>5. Monitoring after go-live</h2>
+  <p>Approval is the start of monitoring. Establish baseline measures before launch and review them across relevant patient groups.</p>
+  <ul>
+    <li>Accuracy, correction rates and clinically significant errors</li>
+    <li>Near misses, incidents and patient complaints</li>
+    <li>Performance differences across populations, settings and languages</li>
+    <li>Workflow changes, alert burden and time saved or displaced</li>
+    <li>Security events, abnormal access and data movement</li>
+    <li>Supplier, model, prompt, integration and policy changes</li>
+  </ul>
+
+  <h2>6. Stop conditions</h2>
+  <p>Document who can pause the system and the conditions that trigger review: unexpected harm, performance deterioration, a material supplier change, a privacy or security incident, loss of required evidence, regulatory change or inability to provide safe human oversight. Maintain a workable fallback process and rehearse it.</p>
+
+  <h2>A minimum approval record</h2>
+  <ol>
+    <li>Named clinical and executive owners</li>
+    <li>Approved purpose, users, population and prohibited uses</li>
+    <li>Evidence review and residual-risk decision</li>
+    <li>Privacy, security, legal and procurement assessments</li>
+    <li>Consumer and workforce considerations</li>
+    <li>Training, monitoring metrics and review frequency</li>
+    <li>Incident pathway, stop conditions and exit plan</li>
+  </ol>
+</GuideLayout>

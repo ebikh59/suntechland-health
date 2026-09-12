@@ -1,0 +1,63 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+const sources = [
+  { label: 'OAIC quick response guide', href: 'https://www.oaic.gov.au/privacy/notifiable-data-breaches/quick-reference-guide-for-responding-to-data-breaches' },
+  { label: 'OAIC Notifiable Data Breaches', href: 'https://www.oaic.gov.au/privacy/notifiable-data-breaches' },
+  { label: 'ACSC report and recover', href: 'https://www.cyber.gov.au/report-and-recover' },
+];
+---
+<GuideLayout title="Healthcare Data Breach Response Checklist" description="A practical sequence for containing an Australian healthcare data breach, preserving evidence and assessing notification obligations." eyebrow="Incident response" updated="12 September 2026" updatedIso="2026-09-12" readingTime="9 minute guide" sources={sources}>
+  <h2>Use this checklist before the pressure starts</h2>
+  <p>A data breach can involve lost devices, misdirected correspondence, unauthorised record access, compromised email, exposed cloud storage or ransomware. In healthcare, the operational response and the privacy response must run together: restoring services quickly cannot come at the cost of destroying evidence or overlooking risks to patients.</p>
+  <p>This checklist supports initial coordination. It is not legal advice and does not replace your incident-response plan, cyber insurer requirements or current guidance from the Office of the Australian Information Commissioner.</p>
+  <div class="callout"><strong>Do not improvise public statements.</strong> Establish confirmed facts, protect affected people and coordinate technical, privacy, clinical, legal and communications decisions.</div>
+
+  <h2>First hour: contain and coordinate</h2>
+  <ol>
+    <li><strong>Activate the incident lead.</strong> Record who has authority to make containment, downtime and notification decisions.</li>
+    <li><strong>Protect patient safety.</strong> Move affected services to tested downtime procedures and tell clinical leaders what information may be unavailable or unreliable.</li>
+    <li><strong>Contain proportionately.</strong> Disable compromised accounts, isolate affected devices or revoke exposed tokens. Avoid wiping or rebuilding systems until evidence is preserved.</li>
+    <li><strong>Start an incident log.</strong> Record times, observations, decisions, commands, people involved and copies of alerts. Use a system that is not dependent on the affected environment.</li>
+    <li><strong>Preserve evidence.</strong> Retain relevant logs, suspicious messages, device images and access records. Maintain a clear chain of custody.</li>
+    <li><strong>Notify essential partners.</strong> Engage your response provider, privacy lead, legal adviser and insurer according to existing arrangements. Contact police or the ACSC when appropriate.</li>
+  </ol>
+
+  <h2>First day: establish what happened</h2>
+  <p>Build a fact table and update it as evidence changes. Separate confirmed information from assumptions.</p>
+  <ul>
+    <li>When did unauthorised access begin and end?</li>
+    <li>Which systems, mailboxes, devices and vendors were involved?</li>
+    <li>Was information only accessed, or was it copied, altered, deleted or published?</li>
+    <li>Whose information is involved, and are any people particularly vulnerable?</li>
+    <li>What types of information are affected—identity, contact, Medicare, financial, clinical notes, diagnoses, medications or test results?</li>
+    <li>Could compromised information enable identity crime, targeted scams, discrimination, physical harm or interruption of care?</li>
+    <li>What containment measures are complete, and what exposure remains?</li>
+  </ul>
+
+  <h2>Assess the NDB threshold</h2>
+  <p>Entities covered by the Privacy Act should assess suspected eligible data breaches promptly. The OAIC’s process focuses on whether there is unauthorised access to, disclosure of, or loss of personal information; whether this is likely to result in serious harm; and whether remedial action prevents that likely harm.</p>
+  <p>Private-sector health service providers can have Privacy Act obligations regardless of the general small-business turnover threshold. Do not assume a small practice is outside the scheme. Record the evidence, reasoning and decision date, including why particular harms were considered likely or unlikely.</p>
+  <h3>Factors that can increase potential harm</h3>
+  <ul>
+    <li>The sensitivity and combination of health, identity and financial information</li>
+    <li>The number and circumstances of affected people</li>
+    <li>Evidence of deliberate theft, extortion, publication or targeted access</li>
+    <li>Whether encryption or access controls remain effective</li>
+    <li>The capabilities and likely intentions of the recipient or attacker</li>
+    <li>Whether fast remedial action genuinely removed the risk</li>
+  </ul>
+
+  <h2>Communicate with affected people</h2>
+  <p>When notification is required—or communication is otherwise appropriate—write for the person affected. Explain what happened, what information was involved, what the organisation has done, what the person can do now and where they can obtain support. Avoid minimising uncertainty. Provide updates when the facts materially change.</p>
+  <p>Coordinate notices with the OAIC process and other sector or jurisdictional obligations. Preserve copies of every notice, recipient group, publication date and support script.</p>
+
+  <h2>Recover safely and learn</h2>
+  <ol>
+    <li>Remove persistence and close the verified entry point before broad reconnection.</li>
+    <li>Reset affected credentials and tokens, prioritising administrators and remote access.</li>
+    <li>Restore from known-good data and validate clinical information before normal use.</li>
+    <li>Increase monitoring for recurrence and related fraud.</li>
+    <li>Run a no-blame review covering controls, suppliers, decision-making and patient impact.</li>
+    <li>Assign corrective actions to named owners with dates and governance oversight.</li>
+  </ol>
+</GuideLayout>

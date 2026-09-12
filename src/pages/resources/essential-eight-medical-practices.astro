@@ -1,0 +1,55 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+const sources = [
+  { label: 'ACSC Essential Eight', href: 'https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight' },
+  { label: 'Essential Eight maturity model', href: 'https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-maturity-model' },
+  { label: 'ADHA healthcare security resources', href: 'https://www.digitalhealth.gov.au/healthcare-providers/training-and-support/cyber-security-training-and-support' },
+];
+---
+<GuideLayout title="Essential Eight for Medical Practices" description="A practical Australian implementation guide for reducing cyber risk in general practice, specialist, dental and allied-health environments." eyebrow="Security baseline" updated="12 September 2026" updatedIso="2026-09-12" readingTime="10 minute guide" sources={sources}>
+  <h2>What the Essential Eight means for a medical practice</h2>
+  <p>The Essential Eight is a set of baseline mitigation strategies developed by the Australian Signals Directorate. It was designed for internet-connected IT networks and should be implemented as a coordinated package. For a medical practice, that means protecting more than office computers: identity systems, practice-management software, clinical workstations, shared drives, remote access, backups and the vendors that support them all matter.</p>
+  <p>The maturity model runs from Level Zero to Level Three. Do not select a level because it sounds impressive. Choose a target based on risk, contractual requirements and the threats your organisation needs to resist, then work consistently across all eight controls. A practice with excellent backups but weak administrator access still has an exploitable gap.</p>
+  <div class="callout"><strong>Start with evidence.</strong> Ask your IT provider to demonstrate each control with configuration records, reports or a restore test. “We have antivirus” is not an Essential Eight assessment.</div>
+
+  <h2>The eight controls in clinical language</h2>
+  <h3>1. Application control</h3>
+  <p>Permit approved applications, scripts and installers to run, and block everything else where practical. Begin with reception, billing and shared clinical workstations, where email attachments and downloaded files are common entry points.</p>
+  <h3>2. Patch applications</h3>
+  <p>Maintain an inventory of browsers, PDF readers, office software, clinical applications and internet-facing services. Agree who patches each product and how urgent security updates are prioritised. A vendor-managed application is not automatically a patched application.</p>
+  <h3>3. Configure Microsoft Office macro settings</h3>
+  <p>Block macros from the internet and limit macro use to approved, documented workflows. Identify any pathology, billing or reporting process that still depends on macros before applying broad restrictions.</p>
+  <h3>4. User application hardening</h3>
+  <p>Harden browsers and common applications so staff cannot casually execute risky content. Remove unnecessary browser extensions and review software that can launch child processes or expose credentials.</p>
+  <h3>5. Restrict administrative privileges</h3>
+  <p>Clinical and administrative staff should use standard accounts for daily work. IT administrators should have separate privileged accounts, used only when required. Review privileged access after staff and vendor changes.</p>
+  <h3>6. Patch operating systems</h3>
+  <p>Include Windows, macOS, servers and supported appliances. Record devices that cannot be patched because of clinical software dependencies, assess their risk and isolate them with compensating controls rather than quietly accepting the exposure.</p>
+  <h3>7. Multi-factor authentication</h3>
+  <p>Prioritise remote access, email, cloud administration, password managers and systems containing health information. Prefer phishing-resistant methods where supported. Shared accounts undermine accountability and should be removed.</p>
+  <h3>8. Regular backups</h3>
+  <p>Back up the information and configurations required to resume patient care. Protect backups from ordinary administrator accounts and test restoration—not merely backup completion. Define how the practice will operate safely while systems are unavailable.</p>
+
+  <h2>A sensible 30-day starting plan</h2>
+  <ol>
+    <li><strong>Map critical services:</strong> practice management, clinical records, identity, email, telehealth, file storage, imaging and backups.</li>
+    <li><strong>Confirm ownership:</strong> document which party patches, monitors and restores every service.</li>
+    <li><strong>Secure identities:</strong> remove dormant accounts, separate administrators and enforce MFA on exposed systems.</li>
+    <li><strong>Review patch evidence:</strong> identify unsupported devices and overdue critical updates.</li>
+    <li><strong>Run a restore exercise:</strong> restore a representative dataset into a safe test environment and record the result.</li>
+    <li><strong>Set a target maturity level:</strong> agree a risk-based target and a funded remediation plan.</li>
+  </ol>
+
+  <h2>Questions to ask your IT provider</h2>
+  <ul>
+    <li>Which systems are outside the current Essential Eight assessment scope, and why?</li>
+    <li>Can you show our current maturity rating for each strategy and the evidence used?</li>
+    <li>Which clinical dependencies prevent patching or application control?</li>
+    <li>When was patient-care data last restored successfully, and how long did it take?</li>
+    <li>Which external vendors retain privileged or remote access?</li>
+    <li>What will staff do during a multi-day outage?</li>
+  </ul>
+
+  <h2>What this baseline does not replace</h2>
+  <p>The Essential Eight does not replace privacy obligations, clinical safety processes, incident response, staff education, vendor risk management or specialised controls for medical devices and operational technology. Use it as a strong technical baseline within a broader risk program. Obtain qualified security, privacy and legal advice for your circumstances.</p>
+</GuideLayout>

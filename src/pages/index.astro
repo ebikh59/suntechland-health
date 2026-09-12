@@ -42,7 +42,7 @@ const leadDate = lead?.data.date.toLocaleDateString('en-AU', { day: 'numeric', m
 const deskDate = new Date().toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long' });
 ---
 
-<BaseLayout title="Australian Healthcare Cyber Security News & Breach Intelligence">
+<BaseLayout title="Australian Healthcare Cybersecurity Intelligence" description="Australian healthcare cybersecurity news, breach tracking, clinical AI governance and practical security guidance for health providers.">
 
   <section class="container masthead">
     <div class="masthead-copy">
@@ -144,6 +144,15 @@ const deskDate = new Date().toLocaleDateString('en-AU', { weekday: 'long', day: 
           <span class="count">{counts[cat.slug]} articles</span>
         </a>
       ))}
+    </div>
+  </section>
+
+  <section class="container resource-strip">
+    <div class="eyebrow eyebrow-row"><span>Practical resources</span><a href="/resources" class="see-all">View the library →</a></div>
+    <div class="resource-grid">
+      <a href="/resources/essential-eight-medical-practices"><span>Security baseline</span><strong>Essential Eight for medical practices</strong><small>10 minute guide →</small></a>
+      <a href="/resources/healthcare-data-breach-response"><span>Incident response</span><strong>Healthcare data breach checklist</strong><small>9 minute guide →</small></a>
+      <a href="/resources/healthcare-ai-governance"><span>Clinical AI</span><strong>Healthcare AI governance checklist</strong><small>8 minute guide →</small></a>
     </div>
   </section>
 
@@ -357,4 +366,12 @@ const deskDate = new Date().toLocaleDateString('en-AU', { weekday: 'long', day: 
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.05em;
 }
+.resource-strip { margin-top: 4.5rem; }
+.resource-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.resource-grid a { display: grid; gap: .55rem; min-height: 170px; padding: 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; transition: border-color .15s, transform .15s; }
+.resource-grid a:hover { border-color: var(--accent); transform: translateY(-3px); }
+.resource-grid span, .resource-grid small { color: var(--accent); font-family: var(--font-mono); font-size: .63rem; text-transform: uppercase; letter-spacing: .08em; }
+.resource-grid strong { color: var(--text); font-family: var(--font-display); font-size: 1.25rem; line-height: 1.2; }
+.resource-grid small { align-self: end; }
+@media (max-width: 760px) { .resource-grid { grid-template-columns: 1fr; } .resource-grid a { min-height: 140px; } }
 </style>
