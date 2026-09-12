@@ -16,16 +16,19 @@ interface Props {
   image?: string;
   source?: string;
   severity?: string;
+  slug: string;
+  readingMinutes: number;
+  headings: { label: string; id: string }[];
 }
 
-const { title, excerpt, date, category, tags, author, image, source, severity } = Astro.props;
+const { title, excerpt, date, category, tags, author, image, source, severity, slug, readingMinutes, headings } = Astro.props;
 
 const formattedDate = date.toLocaleDateString('en-AU', {
   weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
 });
 
 const related = (await getCollection('posts', p =>
-  p.data.category === category
+  p.data.category === category && p.id !== slug
 )).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
 ---
 
@@ -52,6 +55,7 @@ const related = (await getCollection('posts', p =>
               <CategoryBadge category={category} />
               {severity && <SeverityBadge severity={severity} />}
               <time datetime={date.toISOString()}>{formattedDate}</time>
+              <span class="reading-time">{readingMinutes} min read</span>
               {source && <a href={source} target="_blank" rel="noopener" class="source-link">Source ↗</a>}
             </div>
             <h1>{title}</h1>
@@ -69,6 +73,18 @@ const related = (await getCollection('posts', p =>
             <figure class="post-hero">
               <img src={image} alt={title} loading="eager" />
             </figure>
+          )}
+
+          <aside class="trust-note" aria-label="About this briefing">
+            <strong>About this briefing</strong>
+            <p>SunTechLand uses AI-assisted drafting from the cited source. Verify operational decisions against the original publication and current Australian guidance.</p>
+          </aside>
+
+          {headings.length >= 2 && (
+            <nav class="article-toc" aria-label="On this page">
+              <strong>On this page</strong>
+              <ol>{headings.map(heading => <li><a href={`#${heading.id}`}>{heading.label}</a></li>)}</ol>
+            </nav>
           )}
 
           <div class="post-content prose">
@@ -132,6 +148,7 @@ const related = (await getCollection('posts', p =>
 .post-header { margin-bottom: 2rem; }
 .post-meta { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; }
 .post-meta time { font-size: 0.85rem; color: var(--muted); }
+.reading-time { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); }
 .source-link { font-size: 0.8rem; color: var(--accent); }
 h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1rem; }
 .post-excerpt { font-size: 1.1rem; color: var(--subtle); line-height: 1.65; margin-bottom: 1.5rem; }
@@ -152,6 +169,21 @@ h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1rem
   border: 1px solid var(--border);
 }
 .post-hero img { width: 100%; max-height: 480px; object-fit: cover; }
+.trust-note, .article-toc {
+  margin: 0 0 1.5rem; padding: 1rem 1.15rem; border: 1px solid var(--border);
+  border-radius: 10px; background: var(--surface);
+}
+.trust-note strong, .article-toc strong { color: var(--accent); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.trust-note p { margin-top: 0.35rem; color: var(--subtle); font-size: 0.86rem; line-height: 1.55; }
+.article-toc ol { margin: 0.55rem 0 0 1.2rem; columns: 2; column-gap: 2rem; }
+.article-toc li { margin: 0.25rem 0; break-inside: avoid; }
+.article-toc a { font-size: 0.86rem; color: var(--subtle); }
+.article-toc a:hover { color: var(--accent); }
+@media (max-width: 600px) {
+  .post-page { padding-top: 1rem; }
+  h1 { font-size: 2rem; }
+  .article-toc ol { columns: 1; }
+}
 
 /* Prose styles */
 .prose { color: var(--text); font-size: 1.05rem; line-height: 1.8; }

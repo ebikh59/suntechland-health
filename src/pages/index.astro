@@ -6,6 +6,7 @@ import SeverityBadge from '../components/SeverityBadge.astro';
 import AdBanner from '../components/AdBanner.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { getCollection } from 'astro:content';
+import { cleanExcerpt } from '../utils/text';
 
 const allPosts = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
@@ -26,7 +27,7 @@ const bars = [
 ].filter(b => b.value);
 
 const lead = allPosts.find(p => p.id !== tracker?.id) ?? allPosts[0];
-const latest = allPosts.filter(p => p.id !== lead?.id && p.id !== tracker?.id).slice(0, 6);
+const latest = allPosts.filter(p => p.id !== lead?.id && p.id !== tracker?.id).slice(0, 4);
 
 const categories = [
   { slug: 'attacks-breaches',   label: 'Attacks & Breaches', blurb: 'Ransomware, intrusions, notifiable breaches and settlements affecting health providers.' },
@@ -102,8 +103,8 @@ const deskDate = new Date().toLocaleDateString('en-AU', { weekday: 'long', day: 
             <CategoryBadge category={lead.data.category} />
             <time datetime={lead.data.date.toISOString()}>{leadDate}</time>
           </div>
-          <h1><a href={`/post/${lead.id}`}>{lead.data.title}</a></h1>
-          <p class="lead-excerpt">{lead.data.excerpt}</p>
+          <h2 class="lead-title"><a href={`/post/${lead.id}`}>{lead.data.title}</a></h2>
+          <p class="lead-excerpt">{cleanExcerpt(lead.data.excerpt, 320)}</p>
           <a href={`/post/${lead.id}`} class="lead-more">Open intelligence brief <span>→</span></a>
         </article>
       )}
@@ -304,7 +305,7 @@ const deskDate = new Date().toLocaleDateString('en-AU', { weekday: 'long', day: 
   text-transform: uppercase;
   color: var(--accent);
 }
-.lead h1 {
+.lead-title {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3.5rem);
   line-height: 1.04;
@@ -312,8 +313,8 @@ const deskDate = new Date().toLocaleDateString('en-AU', { weekday: 'long', day: 
   font-weight: 700;
   text-wrap: balance;
 }
-.lead h1 a { color: var(--text); }
-.lead h1 a:hover { color: var(--accent); }
+.lead-title a { color: var(--text); }
+.lead-title a:hover { color: var(--accent); }
 .lead-excerpt { color: var(--subtle); max-width: 62ch; line-height: 1.6; }
 .lead-more { align-self: flex-start; margin-top: 0.6rem; font-size: 0.82rem; color: var(--accent); font-weight: 700; padding-bottom: 0.35rem; border-bottom: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); }
 .lead-more span { margin-left: 0.65rem; }
@@ -321,6 +322,16 @@ const deskDate = new Date().toLocaleDateString('en-AU', { weekday: 'long', day: 
 
 /* ── board ── */
 .board { margin-top: 4.5rem; }
+
+@media (max-width: 760px) {
+  .masthead { padding-top: 2.4rem; padding-bottom: 2.6rem; }
+  .masthead h1 { font-size: clamp(2.5rem, 12vw, 3.5rem); line-height: 1; }
+  .masthead-intro { margin-top: 1.2rem; }
+  .hero-grid { gap: 1rem; }
+  .lead { padding: 1.5rem; }
+  .lead-title { font-size: clamp(1.9rem, 9vw, 2.6rem); }
+  .board, .sections { margin-top: 3rem; }
+}
 
 /* ── sections ── */
 .sections { margin-top: 4.5rem; }

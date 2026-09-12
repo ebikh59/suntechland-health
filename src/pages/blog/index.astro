@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 import AdBanner from '../../components/AdBanner.astro';
 import { getCollection } from 'astro:content';
+import { cleanExcerpt } from '../../utils/text';
 
 const allPosts = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
@@ -19,7 +20,33 @@ const categories = ['All', 'attacks-breaches', 'ai-healthcare', 'health-it-secur
 
     <AdBanner size="leaderboard" />
 
-    <div class="filter-bar">
+    <section class="archive-tools" aria-label="Filter intelligence archive">
+      <label class="search-field">
+        <span>Search the archive</span>
+        <input id="archiveSearch" type="search" placeholder="Organisation, incident, CVE or keyword" autocomplete="off" />
+      </label>
+      <label class="select-field">
+        <span>Category</span>
+        <select id="categoryFilter">
+          <option value="all">All categories</option>
+          <option value="attacks-breaches">Attacks &amp; Breaches</option>
+          <option value="ai-healthcare">AI in Healthcare</option>
+          <option value="health-it-security">Health IT</option>
+        </select>
+      </label>
+      <label class="select-field">
+        <span>Severity</span>
+        <select id="severityFilter">
+          <option value="all">All severities</option>
+          <option value="critical">Critical</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </label>
+    </section>
+
+    <div class="filter-bar" aria-label="Category shortcuts">
       {categories.map(cat => (
         <a
           href={cat === 'All' ? '/blog' : `/category/${cat}`}
@@ -35,23 +62,62 @@ const categories = ['All', 'attacks-breaches', 'ai-healthcare', 'health-it-secur
         <p>No articles yet. Check back soon — content is updated hourly.</p>
       </div>
     ) : (
-      <div class="cases">
+      <p class="result-count" id="resultCount" aria-live="polite">Showing {allPosts.length} reports</p>
+      <div class="cases" id="archiveCases">
         {allPosts.map(post => (
-          <ArticleCard
-            title={post.data.title}
-            excerpt={post.data.excerpt}
-            date={post.data.date}
-            category={post.data.category}
-            slug={post.id}
-            image={post.data.image}
-            author={post.data.author}
-            severity={post.data.severity}
-          />
+          <div
+            class="archive-item"
+            data-search={`${post.data.title} ${cleanExcerpt(post.data.excerpt, 500)} ${post.data.tags.join(' ')}`.toLowerCase()}
+            data-category={post.data.category}
+            data-severity={(post.data.severity ?? '').toLowerCase()}
+          >
+            <ArticleCard
+              title={post.data.title}
+              excerpt={post.data.excerpt}
+              date={post.data.date}
+              category={post.data.category}
+              slug={post.id}
+              image={post.data.image}
+              author={post.data.author}
+              severity={post.data.severity}
+            />
+          </div>
         ))}
       </div>
+      <div class="empty-state" id="filterEmpty" hidden>No reports match those filters.</div>
     )}
   </div>
 </BaseLayout>
+
+<script>
+  const search = document.querySelector<HTMLInputElement>('#archiveSearch');
+  const category = document.querySelector<HTMLSelectElement>('#categoryFilter');
+  const severity = document.querySelector<HTMLSelectElement>('#severityFilter');
+  const items = Array.from(document.querySelectorAll<HTMLElement>('.archive-item'));
+  const count = document.querySelector<HTMLElement>('#resultCount');
+  const empty = document.querySelector<HTMLElement>('#filterEmpty');
+
+  const applyFilters = () => {
+    const query = search?.value.trim().toLowerCase() ?? '';
+    const selectedCategory = category?.value ?? 'all';
+    const selectedSeverity = severity?.value ?? 'all';
+    let visible = 0;
+    items.forEach(item => {
+      const matchesSearch = !query || (item.dataset.search ?? '').includes(query);
+      const matchesCategory = selectedCategory === 'all' || item.dataset.category === selectedCategory;
+      const matchesSeverity = selectedSeverity === 'all' || item.dataset.severity === selectedSeverity;
+      const show = matchesSearch && matchesCategory && matchesSeverity;
+      item.hidden = !show;
+      if (show) visible++;
+    });
+    if (count) count.textContent = `Showing ${visible} ${visible === 1 ? 'report' : 'reports'}`;
+    if (empty) empty.hidden = visible !== 0;
+  };
+
+  search?.addEventListener('input', applyFilters);
+  category?.addEventListener('change', applyFilters);
+  severity?.addEventListener('change', applyFilters);
+</script>
 
 <style>
 .blog-page { padding: 2.5rem 0; }
@@ -62,6 +128,32 @@ const categories = ['All', 'attacks-breaches', 'ai-healthcare', 'health-it-secur
   display: flex; flex-wrap: wrap; gap: 0.5rem;
   margin: 1.5rem 0;
 }
+.archive-tools {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 220px 180px;
+  gap: 0.8rem;
+  padding: 1rem;
+  margin: 1.5rem 0 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.archive-tools label { display: flex; flex-direction: column; gap: 0.35rem; }
+.archive-tools label span { font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.archive-tools input, .archive-tools select {
+  width: 100%; min-height: 44px; padding: 0.65rem 0.75rem;
+  color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 7px;
+  font: inherit; font-size: 0.88rem;
+}
+.archive-tools input::placeholder { color: var(--muted); }
+.archive-item[hidden] { display: none; }
+.result-count { margin: 1rem 0 0.65rem; color: var(--muted); font-family: var(--font-mono); font-size: 0.72rem; }
+@media (max-width: 760px) {
+  .blog-page { padding-top: 1.5rem; }
+  .archive-tools { grid-template-columns: 1fr 1fr; }
+  .search-field { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) { .archive-tools { grid-template-columns: 1fr; } .search-field { grid-column: auto; } }
 .filter-btn {
   padding: 0.4rem 0.9rem;
   border-radius: 6px;

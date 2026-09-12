@@ -1,6 +1,7 @@
 ---
 import PostLayout from '../../layouts/PostLayout.astro';
 import { getCollection, render } from 'astro:content';
+import { slugifyHeading } from '../../utils/text';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -12,6 +13,12 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const words = post.body.trim().split(/\s+/).length;
+const readingMinutes = Math.max(1, Math.ceil(words / 220));
+const headings = [...post.body.matchAll(/^##\s+(.+)$/gm)].map(match => ({
+  label: match[1].replace(/[*_`]/g, '').trim(),
+  id: slugifyHeading(match[1]),
+}));
 ---
 
 <PostLayout
@@ -24,6 +31,9 @@ const { Content } = await render(post);
   image={post.data.image}
   source={post.data.source}
   severity={post.data.severity}
+  slug={post.id}
+  readingMinutes={readingMinutes}
+  headings={headings}
 >
   <Content />
 </PostLayout>
