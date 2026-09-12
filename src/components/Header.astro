@@ -13,8 +13,8 @@ const currentPath = Astro.url.pathname;
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="logo">
-      <span class="logo-mark" aria-hidden="true"><span></span></span>
-      <span class="logo-text">SunTech<span class="logo-accent">Land</span><small>Health intelligence</small></span>
+      <img class="logo-mark" src="/logo-mark.svg" alt="" width="42" height="42" aria-hidden="true" />
+      <span class="logo-text">SunTechLand<small>Australian healthcare cyber intelligence</small></span>
       <span class="locale">AU</span>
     </a>
 
@@ -78,18 +78,10 @@ const currentPath = Astro.url.pathname;
   flex-shrink: 0;
 }
 .logo-mark {
-  width: 34px;
-  height: 34px;
-  border: 1px solid var(--accent);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  box-shadow: inset 0 0 0 5px color-mix(in srgb, var(--accent) 8%, transparent);
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
 }
-.logo-mark::before, .logo-mark::after, .logo-mark span { content: ''; display: block; position: absolute; background: var(--accent); border-radius: 2px; }
-.logo-mark::before { width: 16px; height: 3px; }
-.logo-mark::after { width: 3px; height: 16px; }
-.logo-mark span { width: 5px; height: 5px; }
 .logo-text {
   font-family: var(--font-display);
   font-size: 1.28rem;
@@ -97,8 +89,7 @@ const currentPath = Astro.url.pathname;
   color: var(--text);
   letter-spacing: -0.02em;
 }
-.logo-text small { display: block; margin-top: 0.08rem; font-family: var(--font-mono); font-size: 0.48rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-.logo-accent { color: var(--accent); }
+.logo-text small { display: block; margin-top: 0.08rem; font-family: var(--font-mono); font-size: 0.42rem; font-weight: 500; letter-spacing: 0.11em; text-transform: uppercase; color: var(--muted); }
 .locale {
   font-family: var(--font-mono);
   font-size: 0.6rem;
@@ -190,5 +181,7 @@ const currentPath = Astro.url.pathname;
 }
 @media (max-width: 480px) {
   .cta-btn { display: none; }
+  .logo-text small { display: none; }
+  .logo-mark { width: 38px; height: 38px; flex-basis: 38px; }
 }
 </style>
