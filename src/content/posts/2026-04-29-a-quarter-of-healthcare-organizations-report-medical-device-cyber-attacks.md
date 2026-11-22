@@ -1,6 +1,6 @@
 ---
 title: "A Quarter of Healthcare Organizations Report Medical Device Cyber-Attacks"
-excerpt: "New report: 25% of healthcare organizations experienced medical device cyber-attacks, causing severe patient care disruptions and safety risks."
+excerpt: "A new report reveals 25% of healthcare organizations faced medical device cyber-attacks, leading to severe patient care disruptions and safety risks."
 date: 2026-04-29
 severity: Critical
 category: attacks-breaches
